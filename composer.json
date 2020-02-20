@@ -1,19 +1,21 @@
 {
-    "name": "tuandm/laravue",
-    "description": "The beautiful dashboard for Laravel built by VueJS.",
+    "name": "LaraErp",
+    "description": "ERP designed on Laravel and VueJs with LaraVue admin template.",
     "keywords": [
-        "laravel",
+        "ERP",
         "laravue",
         "vue",
         "admin",
-        "dashboard"
+        "dashboard",
+        "retail",
+        "pos"
     ],
     "license": "MIT",
     "authors": [
         {
-            "name": "Tuan Duong",
-            "email": "bacduong@gmail.com",
-            "homepage": "https://laravue.dev",
+            "name": "Bruno Chavez",
+            "email": "crash.master35@gmail.com",
+            "homepage": "https://acuaexpress.mx",
             "role": "Developer"
         }
     ],
