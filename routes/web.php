@@ -11,6 +11,10 @@
 |
 */
 
-Route::group(['middleware' => 'web'], function () {
-    Route::get('/{any}', 'LaravueController@index')->where('any', '.*');
+Route::get('/', function () {
+    return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
