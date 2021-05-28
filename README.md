@@ -9,6 +9,7 @@ Se les invita a participar en el desarrollo de LaraErp bajo las siguientes condi
 - El codigo debe estar totalmente documentado.
 - Todo debe desarrollarse como modulos independientes.
 - Lean los archivos de configuración que les permite desarrollar sus propios modulos.
+- Deberán trabajar en ramas (branch) de git y posteriormente informarme que crearon una modificación para yo realizar la union y prueba (merge).
 
 ## Seguridad y vulnerabilidades
 
@@ -44,3 +45,6 @@ El diseño se encuentra crado por Gentella - Bootstrap Admin Template by ColorLi
 
 Se encuentra ubicado en la carpeta public/template. De ahi se pueden ir agregando los componentes.
 
+## Colaboradores
+
+Bruno Chavez (crash.master35@gmail.com)
