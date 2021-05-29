@@ -54,10 +54,10 @@ Bruno Chavez (crash.master35@gmail.com)
 ### Modules
 
 #### Module:
-  - [] Create the ajax to turn on/off modules
-  - [] Create settings view
-  - [] Create main view
-  - [] Create migration
+  - [ ] Create the ajax to turn on/off modules
+  - [ ] Create settings view
+  - [ ] Create main view
+  - [ ] Create migration
 
 #### User:
-  - [] Create all
+  - [ ] Create all
