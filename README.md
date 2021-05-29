@@ -51,4 +51,13 @@ Bruno Chavez (crash.master35@gmail.com)
 
 ## ToDo
 
-- [ ] Create the ajax to turn on/off modules
+### Modules
+
+#### Module:
+  - [] Create the ajax to turn on/off modules
+  - [] Create settings view
+  - [] Create main view
+  - [] Create migration
+
+#### User:
+  - [] Create all
