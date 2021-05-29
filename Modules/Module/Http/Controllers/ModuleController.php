@@ -33,6 +33,8 @@ class ModuleController extends Controller
             $mod['category'] = config($module->getLowerName() . '.category', '');
             $mod['description'] = config($module->getLowerName() . '.description', '');
             $mod['display'] = config($module->getLowerName() . '.display', true);
+            $mod['hasSettings'] = config($module->getLowerName() . '.hasSettings', false);
+            $mod['path'] = $module->getLowerName();
             $list[] = $mod;            
         }
 

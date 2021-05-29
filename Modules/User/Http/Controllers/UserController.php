@@ -18,6 +18,15 @@ class UserController extends Controller
     }
 
     /**
+     * Display a listing of the resource.
+     * @return Renderable
+     */
+    public function settings()
+    {
+        return view('user::settings');
+    }
+
+    /**
      * Show the form for creating a new resource.
      * @return Renderable
      */

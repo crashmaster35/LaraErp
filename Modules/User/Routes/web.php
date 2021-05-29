@@ -16,8 +16,8 @@ Route::prefix('user')->group(function() {
     Route::get('/', 'UserController@index');
 
     /* This is the config page for the module */
-    Route::prefix('config')->group(function() {
-      Route::get('/', 'UserController@index');
+    Route::prefix('settings')->group(function() {
+      Route::get('/', 'UserController@settings');
     });
 
 });

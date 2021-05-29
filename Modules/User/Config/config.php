@@ -17,5 +17,6 @@ return [
     'description' => 'Este modulo controla todos los usuarios dentro del sistema. Altas/Bajas/Cambios de usuarios, contraseñas, permisos.',
     'required' => true,             
     'hasConfig' => true,  
-    'display' => true
+    'display' => true,
+    'hasSettings' => true
 ];
