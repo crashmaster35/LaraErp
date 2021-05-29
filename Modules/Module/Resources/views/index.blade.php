@@ -21,24 +21,26 @@
 
           @foreach ($modules as $module)
             @if ($cat == $module['category'])
-              <div class="col-md-3   widget widget_tally_box">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>{{ $module['name'] }}</h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li>
-                        <label>
-                          <input type="checkbox" class="js-switch" {{ ($module['status'] == 'enabled')?'checked': '' }} {{ ($module['required'] == true)? 'disabled="disabled"' : '' }} />
-                        </label>
-                      </li>
-                    </ul>
-                    <div class="clearfix"></div>
+              @if ($module['display'] == true)
+                <div class="col-md-3   widget widget_tally_box">
+                  <div class="x_panel">
+                    <div class="x_title">
+                      <h2>{{ $module['name'] }}</h2>
+                      <ul class="nav navbar-right panel_toolbox">
+                        <li>
+                          <label>
+                            <input type="checkbox" class="js-switch" {{ ($module['status'] == 'enabled')?'checked': '' }} {{ ($module['required'] == true)? 'disabled="disabled"' : '' }} />
+                          </label>
+                        </li>
+                      </ul>
+                      <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                      {{ $module['description'] }}    
+                    </div>
                   </div>
-                  <div class="x_content">
-                    {{ $module['description'] }}    
-                  </div>
-                </div>
-              </div>        
+                </div>        
+              @endif
             @endif
           @endforeach
           <div class="clearfix"></div>

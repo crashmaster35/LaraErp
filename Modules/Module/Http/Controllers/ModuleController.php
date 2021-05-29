@@ -6,9 +6,15 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use \Module;
+use App\Http\Controllers\PublicController;
 
 class ModuleController extends Controller
 {
+
+    public function __construct ( PublicController $publicController )
+    {
+        $this->publicController = $publicController;
+    }
     /**
      * Muestra el listado de modulos, permite activarlos/desactivarlos y si hay configurador acceder a el.
      * @return Renderable
@@ -17,7 +23,7 @@ class ModuleController extends Controller
     {
         $modules = Module::toCollection();
         
-        $categories = $this->getCategories($modules);
+        $categories = $this->publicController->getCategories($modules, true);
 
         foreach ($modules as $module) {
             $mod['name'] = config($module->getLowerName() . '.name', '');
@@ -26,32 +32,14 @@ class ModuleController extends Controller
             $mod['hasConfig'] = config($module->getLowerName() . '.hasConfig', false);
             $mod['category'] = config($module->getLowerName() . '.category', '');
             $mod['description'] = config($module->getLowerName() . '.description', '');
+            $mod['display'] = config($module->getLowerName() . '.display', true);
             $list[] = $mod;            
         }
 
         return view('module::index', ['modules' => $list, 'categories' => $categories]);
     }
 
-    /**
-     * Obtiene un listado de las categorias  para los modulos
-     *
-     * @return categories
-     */
-    private function getCategories($modules)
-    {
 
-        $list = [];
-
-        foreach ($modules as $module) {
-            $category = config($module->getLowerName() . '.category', '');
-
-            if (!in_array($category, $list)) {
-                $list[] = $category;
-            }
-        }
-
-        return $list;
-    }
     /**
      * Show the form for creating a new resource.
      * @return Renderable
