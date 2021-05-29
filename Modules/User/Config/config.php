@@ -10,8 +10,9 @@
 ************************************************************************************************/
 
 return [
-    'name' => 'User',
-    'category' => 'SETTINGS',
+    'name' => 'Usuarios',
+    'category' => 'USUARIOS',
     'required' => true,             
     'hasConfig' => true,  
+    'description' => 'Este modulo controla todos los usuarios dentro del sistema. Altas/Bajas/Cambios de usuarios, contraseñas, permisos.'       
 ];

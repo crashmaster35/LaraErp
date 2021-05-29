@@ -37,6 +37,9 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <!-- Switchery -->
+    <link href="vendors/switchery/dist/switchery.min.css" rel="stylesheet">
+
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -378,6 +381,8 @@
     <script src="/vendors/iCheck/icheck.min.js" defer></script>
     <!-- Skycons -->
     <script src="/vendors/skycons/skycons.js" defer></script>
+    <!-- Switchery -->
+    <script src="/vendors/switchery/dist/switchery.min.js"></script>
     <!-- Flot -->
     <script src="/vendors/Flot/jquery.flot.js" defer></script>
     <script src="/vendors/Flot/jquery.flot.pie.js" defer></script>

@@ -10,8 +10,9 @@
 ************************************************************************************************/
 
 return [
-    'name' => 'Module',
-    'category' => 'SETTINGS',
+    'name' => 'Modulos',
+    'category' => 'CONFIGURACION',
     'required' => true,             
-    'hasConfig' => false,       
+    'hasConfig' => false,
+    'description' => 'Este modulo controla todos los modulos instalados en LaraErp'       
 ];

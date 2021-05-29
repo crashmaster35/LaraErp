@@ -5,15 +5,43 @@
 @section('content')
   <div class="row">
     <div class="col-sm-12">
-      <h1>{{  __('Module') }}</h1>
+      <h1>{{  __('Modulos') }}</h1>
 
       <p>
-          This is the list of the modules active/inactive
+          Lista de todos los modulos instalados en el sistema. Dentro de esta pantalla podrá activar o desactivar un modulo, asi como ingresar a la configuración propia de cada modulo.
       </p>
 
       <p>
-        @foreach ($modules as $module)
-          {{ $module['name'] }} -> {{ $module['status'] }} ->  {{ ($module['required'] == true)? 'true' : 'false' }}  ->  {{ ($module['hasConfig'] == true)? 'true' : 'false' }} -> {{ $module['category'] }} <br/>
+        @foreach ($categories as $cat)
+          <div class="page-title">
+            <div class="title_left">
+              <h3>{{ $cat }}</h3>
+            </div>
+          </div>
+
+          @foreach ($modules as $module)
+            @if ($cat == $module['category'])
+              <div class="col-md-3   widget widget_tally_box">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>{{ $module['name'] }}</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li>
+                        <label>
+                          <input type="checkbox" class="js-switch" {{ ($module['status'] == 'enabled')?'checked': '' }} {{ ($module['required'] == true)? 'disabled="disabled"' : '' }} />
+                        </label>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    {{ $module['description'] }}    
+                  </div>
+                </div>
+              </div>        
+            @endif
+          @endforeach
+          <div class="clearfix"></div>
         @endforeach
       </p>
     </div>
