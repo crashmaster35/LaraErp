@@ -48,3 +48,7 @@ Se encuentra ubicado en la carpeta public/template. De ahi se pueden ir agregand
 ## Colaboradores
 
 Bruno Chavez (crash.master35@gmail.com)
+
+## ToDo
+
+- [ ] Create the ajax to turn on/off modules
