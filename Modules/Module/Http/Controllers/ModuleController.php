@@ -22,6 +22,7 @@ class ModuleController extends Controller
             $mod['status'] = ($module->isEnabled() == 1) ? 'enabled' : 'disabled';
             $mod['required'] = config($module->getLowerName() . '.required', false);
             $mod['hasConfig'] = config($module->getLowerName() . '.hasConfig', false);
+            $mod['category'] = config($module->getLowerName() . '.category', '');
             $list[] = $mod;            
         }
 

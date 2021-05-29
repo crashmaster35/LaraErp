@@ -14,23 +14,23 @@
 
     
     <!-- Bootstrap -->
-    <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
-    <link href="vendors/nprogress/nprogress.css" rel="stylesheet">
+    <link href="/vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- iCheck -->
-    <link href="vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <link href="/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
     
     <!-- bootstrap-progressbar -->
-    <link href="vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <link href="/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
     <!-- JQVMap -->
-    <link href="vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
+    <link href="/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
     <!-- bootstrap-daterangepicker -->
-    <link href="vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    <link href="/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
-    <link href="vendors/build/css/custom.min.css" rel="stylesheet">
+    <link href="/vendors/build/css/custom.min.css" rel="stylesheet">
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
@@ -361,45 +361,45 @@
 </div>
 
     <!-- jQuery -->
-    <script src="vendors/jquery/dist/jquery.min.js" defer></script>
+    <script src="/vendors/jquery/dist/jquery.min.js" defer></script>
     <!-- Bootstrap -->
-    <script src="vendors/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="/vendors/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
     <!-- FastClick -->
-    <script src="vendors/fastclick/lib/fastclick.js"  defer></script>
+    <script src="/vendors/fastclick/lib/fastclick.js"  defer></script>
     <!-- NProgress -->
-    <script src="vendors/nprogress/nprogress.js" defer></script>
+    <script src="/vendors/nprogress/nprogress.js" defer></script>
     <!-- Chart.js -->
-    <script src="vendors/Chart.js/dist/Chart.min.js" defer></script>
+    <script src="/vendors/Chart.js/dist/Chart.min.js" defer></script>
     <!-- gauge.js -->
-    <script src="vendors/gauge.js/dist/gauge.min.js" defer></script>
+    <script src="/vendors/gauge.js/dist/gauge.min.js" defer></script>
     <!-- bootstrap-progressbar -->
-    <script src="vendors/bootstrap-progressbar/bootstrap-progressbar.min.js" defer></script>
+    <script src="/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js" defer></script>
     <!-- iCheck -->
-    <script src="vendors/iCheck/icheck.min.js" defer></script>
+    <script src="/vendors/iCheck/icheck.min.js" defer></script>
     <!-- Skycons -->
-    <script src="vendors/skycons/skycons.js" defer></script>
+    <script src="/vendors/skycons/skycons.js" defer></script>
     <!-- Flot -->
-    <script src="vendors/Flot/jquery.flot.js" defer></script>
-    <script src="vendors/Flot/jquery.flot.pie.js" defer></script>
-    <script src="vendors/Flot/jquery.flot.time.js" defer></script>
-    <script src="vendors/Flot/jquery.flot.stack.js" defer></script>
-    <script src="vendors/Flot/jquery.flot.resize.js" defer></script>
+    <script src="/vendors/Flot/jquery.flot.js" defer></script>
+    <script src="/vendors/Flot/jquery.flot.pie.js" defer></script>
+    <script src="/vendors/Flot/jquery.flot.time.js" defer></script>
+    <script src="/vendors/Flot/jquery.flot.stack.js" defer></script>
+    <script src="/vendors/Flot/jquery.flot.resize.js" defer></script>
     <!-- Flot plugins -->
-    <script src="vendors/flot.orderbars/js/jquery.flot.orderBars.js" defer></script>
-    <script src="vendors/flot-spline/js/jquery.flot.spline.min.js" defer></script>
-    <script src="vendors/flot.curvedlines/curvedLines.js" defer></script>
+    <script src="/vendors/flot.orderbars/js/jquery.flot.orderBars.js" defer></script>
+    <script src="/vendors/flot-spline/js/jquery.flot.spline.min.js" defer></script>
+    <script src="/vendors/flot.curvedlines/curvedLines.js" defer></script>
     <!-- DateJS -->
-    <script src="vendors/DateJS/build/date.js" defer></script>
+    <script src="/vendors/DateJS/build/date.js" defer></script>
     <!-- JQVMap -->
-    <script src="vendors/jqvmap/dist/jquery.vmap.js" defer></script>
-    <script src="vendors/jqvmap/dist/maps/jquery.vmap.world.js" defer></script>
-    <script src="vendors/jqvmap/examples/js/jquery.vmap.sampledata.js" defer></script>
+    <script src="/vendors/jqvmap/dist/jquery.vmap.js" defer></script>
+    <script src="/vendors/jqvmap/dist/maps/jquery.vmap.world.js" defer></script>
+    <script src="/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js" defer></script>
     <!-- bootstrap-daterangepicker -->
-    <script src="vendors/moment/min/moment.min.js" defer></script>
-    <script src="vendors/bootstrap-daterangepicker/daterangepicker.js" defer></script>
+    <script src="/vendors/moment/min/moment.min.js" defer></script>
+    <script src="/vendors/bootstrap-daterangepicker/daterangepicker.js" defer></script>
 
     <!-- Custom Theme Scripts -->
-    <script src="vendors/build/js/custom.min.js" defer></script>
+    <script src="/vendors/build/js/custom.min.js" defer></script>
 
 </body>
 </html>

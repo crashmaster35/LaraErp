@@ -11,6 +11,7 @@
 
 return [
     'name' => 'Module',
+    'category' => 'SETTINGS',
     'required' => true,             
     'hasConfig' => false,       
 ];

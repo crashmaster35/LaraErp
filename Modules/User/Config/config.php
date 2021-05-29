@@ -11,6 +11,7 @@
 
 return [
     'name' => 'User',
+    'category' => 'SETTINGS',
     'required' => true,             
     'hasConfig' => true,  
 ];

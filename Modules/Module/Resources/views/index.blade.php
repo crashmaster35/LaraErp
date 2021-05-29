@@ -13,7 +13,7 @@
 
       <p>
         @foreach ($modules as $module)
-          {{ $module['name'] }} -> {{ $module['status'] }} ->  {{ ($module['required'] == true)? 'true' : 'false' }}  ->  {{ ($module['hasConfig'] == true)? 'true' : 'false' }} <br/>
+          {{ $module['name'] }} -> {{ $module['status'] }} ->  {{ ($module['required'] == true)? 'true' : 'false' }}  ->  {{ ($module['hasConfig'] == true)? 'true' : 'false' }} -> {{ $module['category'] }} <br/>
         @endforeach
       </p>
     </div>
