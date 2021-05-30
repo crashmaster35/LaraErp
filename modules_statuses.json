@@ -1,4 +1,5 @@
 {
     "User": true,
-    "Module": true
+    "Module": true,
+    "Roles": true
 }

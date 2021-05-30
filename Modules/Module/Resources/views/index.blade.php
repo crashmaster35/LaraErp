@@ -29,7 +29,9 @@
                       <ul class="nav navbar-right panel_toolbox">
                         <li>
                           <label>
-                            <input type="checkbox" class="js-switch" {{ ($module['status'] == 'enabled')?'checked': '' }} {{ ($module['required'] == true)? 'disabled="disabled"' : '' }} data-module="{{ $module['id'] }}" />
+                            <a href="/module/toggleModule?module={{$module['id']}}">
+                              <input type="checkbox" class="js-switch" {{ ($module['status'] == 'enabled')?'checked': '' }} {{ ($module['required'] == true)? 'disabled="disabled"' : '' }} data-module="{{ $module['id'] }}" />
+                            </a>
                           </label>
                         </li>
                         @if ($module['status'] == 'enabled')

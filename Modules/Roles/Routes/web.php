@@ -1,8 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PublicController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,11 +11,12 @@ use App\Http\Controllers\PublicController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::prefix('roles')->group(function() {
+    Route::get('/', 'RolesController@index');
+
+    /* This is the config page for the module */
+    Route::prefix('settings')->group(function() {
+      Route::get('/', 'RolesController@settings');
+    });
+
 });
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-

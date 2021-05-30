@@ -33,7 +33,6 @@ class ModuleController extends Controller
                 $mod['name'] = config($module->getLowerName() . '.name', '');
                 $mod['status'] = ($module->isEnabled() == 1) ? 'enabled' : 'disabled';
                 $mod['required'] = config($module->getLowerName() . '.required', false);
-                $mod['hasConfig'] = config($module->getLowerName() . '.hasConfig', false);
                 $mod['category'] = config($module->getLowerName() . '.category', '');
                 $mod['description'] = config($module->getLowerName() . '.description', '');
                 $mod['display'] = config($module->getLowerName() . '.display', true);
@@ -45,7 +44,6 @@ class ModuleController extends Controller
                 $mod['name'] = $config['name'];
                 $mod['status'] = ($module->isEnabled() == 1) ? 'enabled' : 'disabled';
                 $mod['required'] = $config['required'];
-                $mod['hasConfig'] = $config['hasConfig'];
                 $mod['category'] = $config['category'];
                 $mod['description'] = $config['description'];
                 $mod['display'] = $config['display'];
@@ -54,10 +52,24 @@ class ModuleController extends Controller
             }
             $list[] = $mod;            
         }
-
         return view('module::index', ['modules' => $list, 'categories' => $categories]);
     }
 
+
+    public function toggleModule(Request $request)
+    {
+        $data = $request->all();
+
+        $module = Module::find($data['module']);
+
+        if ($module->isEnabled() == "false") {
+            $module->disable();
+        } else {
+            $module->enable();
+        }
+
+        return redirect('/module');
+    }
 
     /**
      * Show the form for creating a new resource.

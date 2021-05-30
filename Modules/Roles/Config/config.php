@@ -13,10 +13,10 @@
 ************************************************************************************************/
 
 return [
-    'name' => 'Modulos',
-    'category' => 'CONFIGURACION',
-    'description' => 'Este modulo controla todos los modulos instalados en LaraErp',
+    'name' => 'Roles',
+    'category' => 'USUARIOS',
+    'description' => 'Este modulo controla todos los roles de usuarios dentro del sistema, asi como los permisos.',
     'required' => true,             
     'display' => true,
-    'hasSettings' => false
+    'hasSettings' => true
 ];

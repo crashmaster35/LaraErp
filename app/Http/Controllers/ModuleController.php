@@ -51,20 +51,4 @@ class ModuleController extends Controller
         return $list;
     }
 
-    public function changeModuleStatus($request)
-    {
-        $data = $request->all();
-
-        $module = Module::find($data['module']);
-
-        if ($data['status'] == "false") {
-            $module->disable();
-            return true;
-        } else {
-            $module->enable();
-            return true;
-        }
-
-        return false;
-    }
 }
