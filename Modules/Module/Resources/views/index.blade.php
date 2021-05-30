@@ -32,10 +32,12 @@
                             <input type="checkbox" class="js-switch" {{ ($module['status'] == 'enabled')?'checked': '' }} {{ ($module['required'] == true)? 'disabled="disabled"' : '' }} data-module="{{ $module['id'] }}" />
                           </label>
                         </li>
-                        @if ($module['hasSettings'])
-                          <li>
-                            <a href="/{{ $module['path'] }}/settings" role="button" aria-expanded="false"><i class="fa fa-cogs"></i></a>
-                          </li>
+                        @if ($module['status'] == 'enabled')
+                          @if ($module['hasSettings'])
+                            <li>
+                              <a href="/{{ $module['path'] }}/settings" role="button" aria-expanded="false"><i class="fa fa-cogs"></i></a>
+                            </li>
+                          @endif
                         @endif
                       </ul>
                       <div class="clearfix"></div>
