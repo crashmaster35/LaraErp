@@ -15,7 +15,6 @@ Se les invita a participar en el desarrollo de LaraErp bajo las siguientes condi
 
 Se requieren desarrolladores para los siguientes módulos:
 
-- [X] Modulos
 - [ ] Usuarios
 - [ ] Empresa
 - [ ] Almacenes
@@ -71,13 +70,3 @@ Se encuentra ubicado en la carpeta public/template. De ahi se pueden ir agregand
 ## Colaboradores
 
 Bruno Chavez (crash.master35@gmail.com)
-
-## ToDo
-
-### Modules
-
-#### User:
-  - [ ] Create all
-
-## Modulos terminados
-- [X] Modules

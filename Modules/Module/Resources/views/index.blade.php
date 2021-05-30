@@ -34,7 +34,7 @@
                         </li>
                         @if ($module['hasSettings'])
                           <li>
-                            <a href="/{{ $module['path'] }}/settings" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                            <a href="/{{ $module['path'] }}/settings" role="button" aria-expanded="false"><i class="fa fa-cogs"></i></a>
                           </li>
                         @endif
                       </ul>
