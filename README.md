@@ -15,7 +15,7 @@ Se les invita a participar en el desarrollo de LaraErp bajo las siguientes condi
 
 Se requieren desarrolladores para los siguientes módulos:
 
-- [ ] Modulos
+- [X] Modulos
 - [ ] Usuarios
 - [ ] Empresa
 - [ ] Almacenes
@@ -76,11 +76,8 @@ Bruno Chavez (crash.master35@gmail.com)
 
 ### Modules
 
-#### Module:
-  - [ ] Create the ajax to turn on/off modules
-  - [ ] Create settings view
-  - [ ] Create main view
-  - [ ] Create migration
-
 #### User:
   - [ ] Create all
+
+## Modulos terminados
+- [X] Modules
