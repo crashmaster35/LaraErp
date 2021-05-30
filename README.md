@@ -11,6 +11,29 @@ Se les invita a participar en el desarrollo de LaraErp bajo las siguientes condi
 - Lean los archivos de configuración que les permite desarrollar sus propios modulos.
 - Deberán trabajar en ramas (branch) de git y posteriormente informarme que crearon una modificación para yo realizar la union y prueba (merge).
 
+## Modulos en desarrollo 
+
+Se requieren desarrolladores para los siguientes módulos:
+
+- [ ] Modulos
+- [ ] Usuarios
+- [ ] Empresa
+- [ ] Almacenes
+- [ ] Productos
+- [ ] Servicios
+- [ ] Proveedores
+- [ ] Clientes
+- [ ] TPV
+- [ ] Pedidos
+- [ ] Presupuestos
+- [ ] Facturas
+- [ ] Bancos
+- [ ] Caja
+- [ ] Contabilidad
+- [ ] Inventarios
+
+Teniendo los módulos básicos se pensará en liberar la version 1.
+
 ## Seguridad y vulnerabilidades
 
 Si encuentran alguna vulnerabilidad por favor reportenlo directamente en nuestro github: (https://github.com/crashmaster35/LaraErp)

@@ -12,6 +12,11 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <!-- jQuery -->
+    <!--script src="/vendors/jquery/dist/jquery.min.js" async></script-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" async></script>
+    <!-- Bootstrap -->
+    <script src="/vendors/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
     
     <!-- Bootstrap -->
     <link href="/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -363,10 +368,6 @@
     </div>
 </div>
 
-    <!-- jQuery -->
-    <script src="/vendors/jquery/dist/jquery.min.js" defer></script>
-    <!-- Bootstrap -->
-    <script src="/vendors/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
     <!-- FastClick -->
     <script src="/vendors/fastclick/lib/fastclick.js"  defer></script>
     <!-- NProgress -->
@@ -405,6 +406,8 @@
 
     <!-- Custom Theme Scripts -->
     <script src="/vendors/build/js/custom.min.js" defer></script>
+
+    @yield('scripts')
 
 </body>
 </html>

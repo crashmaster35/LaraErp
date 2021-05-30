@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use \Module;
 
 class ModuleController extends Controller
 {
@@ -15,30 +16,55 @@ class ModuleController extends Controller
      */
     public function getCategories($modules, $display)
     {
-
         $list = [];
         $modDisp = false;
 
         foreach ($modules as $module) {
+            $enable = $module->isEnabled();
+            if ($enable) {
+                $conf['modDisp'] = config($module->getLowerName() . '.display', 'true');
+                $conf['category'] = config($module->getLowerName() . '.category', '');
+            } else {
+                $config = include(base_path() . '/Modules/' .  $module->getName() . '/Config/config.php');
+                $conf['modDisp'] = $config['display'];
+                $conf['category'] = $config['category'];
+            }
+
             if ($display == true) {
-                $modDisp = config($module->getLowerName() . '.display', 'true');
+                $modDisp = $conf['modDisp'];
 
                 if ($modDisp == true) {
-                    $category = config($module->getLowerName() . '.category', '');
+                    $category = $conf['category'];
 
                     if (!in_array($category, $list)) {
                         $list[] = $category;
                     }
                 }
             } else {
-                $category = config($module->getLowerName() . '.category', '');
+                $category = $conf['category'];
 
                 if (!in_array($category, $list)) {
                     $list[] = $category;
                 }
             }
         }
-
         return $list;
+    }
+
+    public function changeModuleStatus($request)
+    {
+        $data = $request->all();
+
+        $module = Module::find($data['module']);
+
+        if ($data['status'] == "false") {
+            $module->disable();
+            return true;
+        } else {
+            $module->enable();
+            return true;
+        }
+
+        return false;
     }
 }

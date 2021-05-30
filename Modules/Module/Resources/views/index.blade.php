@@ -29,7 +29,7 @@
                       <ul class="nav navbar-right panel_toolbox">
                         <li>
                           <label>
-                            <input type="checkbox" class="js-switch" {{ ($module['status'] == 'enabled')?'checked': '' }} {{ ($module['required'] == true)? 'disabled="disabled"' : '' }} />
+                            <input type="checkbox" class="js-switch" {{ ($module['status'] == 'enabled')?'checked': '' }} {{ ($module['required'] == true)? 'disabled="disabled"' : '' }} data-module="{{ $module['id'] }}" />
                           </label>
                         </li>
                         @if ($module['hasSettings'])
@@ -53,4 +53,42 @@
       </p>
     </div>
   </div>
+@endsection
+
+@section('scripts')
+  <script type="text/javascript" async>
+    $(document).ready( function() {
+      $(":checkbox").click( function() {
+        var module = $(this).attr('data-module');
+        var status = $(this).is(":checked");
+        var nstatus = 'activar';
+
+        if(confirm('¿Estas seguro de ' + ((status == false)?'desactivar':'activar') + ' el módulo : '+module)){
+          $.ajax({
+            headers: {
+              'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            url: "/actions/changeModuleStatus",
+            dataType: 'json',
+            type: 'post',
+            data:{status: status, module: module},
+            success: function(result) {
+              if (result) {
+                document.location.reload();
+              } else {
+                alert('Se encontró un error inesperado, vuelva a cargarlo o llame a su administrador para solucionar el problema.');
+                document.location.reload();
+              }
+            }
+          });
+        } else {
+          if (status) {
+            $(this).prop('checked', false);
+          } else {
+            $(this).prop('checked', true);
+          }
+        }
+      });
+    });
+  </script>
 @endsection

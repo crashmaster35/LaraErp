@@ -15,7 +15,7 @@ return [
     'name' => 'Usuarios',
     'category' => 'USUARIOS',
     'description' => 'Este modulo controla todos los usuarios dentro del sistema. Altas/Bajas/Cambios de usuarios, contraseñas, permisos.',
-    'required' => true,             
+    'required' => false,             
     'hasConfig' => true,  
     'display' => true,
     'hasSettings' => true

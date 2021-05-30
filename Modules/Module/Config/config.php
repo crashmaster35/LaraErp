@@ -17,6 +17,6 @@ return [
     'description' => 'Este modulo controla todos los modulos instalados en LaraErp',
     'required' => true,             
     'hasConfig' => false,
-    'display' => true,
+    'display' => false,
     'hasSettings' => false
 ];

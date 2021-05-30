@@ -21,20 +21,37 @@ class ModuleController extends Controller
      */
     public function index()
     {
+        $mod = [];
+
         $modules = Module::toCollection();
         
         $categories = $this->publicController->getCategories($modules, true);
 
         foreach ($modules as $module) {
-            $mod['name'] = config($module->getLowerName() . '.name', '');
-            $mod['status'] = ($module->isEnabled() == 1) ? 'enabled' : 'disabled';
-            $mod['required'] = config($module->getLowerName() . '.required', false);
-            $mod['hasConfig'] = config($module->getLowerName() . '.hasConfig', false);
-            $mod['category'] = config($module->getLowerName() . '.category', '');
-            $mod['description'] = config($module->getLowerName() . '.description', '');
-            $mod['display'] = config($module->getLowerName() . '.display', true);
-            $mod['hasSettings'] = config($module->getLowerName() . '.hasSettings', false);
-            $mod['path'] = $module->getLowerName();
+            if ($module->isEnabled() == true) {
+                $mod['id'] = $module->getName();
+                $mod['name'] = config($module->getLowerName() . '.name', '');
+                $mod['status'] = ($module->isEnabled() == 1) ? 'enabled' : 'disabled';
+                $mod['required'] = config($module->getLowerName() . '.required', false);
+                $mod['hasConfig'] = config($module->getLowerName() . '.hasConfig', false);
+                $mod['category'] = config($module->getLowerName() . '.category', '');
+                $mod['description'] = config($module->getLowerName() . '.description', '');
+                $mod['display'] = config($module->getLowerName() . '.display', true);
+                $mod['hasSettings'] = config($module->getLowerName() . '.hasSettings', false);
+                $mod['path'] = $module->getLowerName();
+            } else {
+                $config = include(base_path() . '/Modules/' .  $module->getName() . '/Config/config.php');
+                $mod['id'] = $module->getName();
+                $mod['name'] = $config['name'];
+                $mod['status'] = ($module->isEnabled() == 1) ? 'enabled' : 'disabled';
+                $mod['required'] = $config['required'];
+                $mod['hasConfig'] = $config['hasConfig'];
+                $mod['category'] = $config['category'];
+                $mod['description'] = $config['description'];
+                $mod['display'] = $config['display'];
+                $mod['hasSettings'] = $config['hasSettings'];
+                $mod['path'] = $module->getLowerName();
+            }
             $list[] = $mod;            
         }
 

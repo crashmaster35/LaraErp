@@ -36,4 +36,9 @@ class PublicController extends Controller
     {
       return $this->moduleController->getCategories($module, $display);
     }
+
+    public function changeModuleStatus(Request $request)
+    {
+      return $this->moduleController->changeModuleStatus($request);
+    }
 }
