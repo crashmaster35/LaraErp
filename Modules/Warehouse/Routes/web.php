@@ -1,8 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PublicController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,15 +11,15 @@ use App\Http\Controllers\PublicController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+/* this is the route for the main pages of the module */
+Route::prefix('warehouse')->group(function() {
+    Route::get('/', 'WarehouseController@index');
+
+    /* This is the config page for the module */
+    Route::prefix('settings')->group(function() {
+      Route::get('/', 'WarehouseController@settings');
+      Route::post('/', 'WarehouseController@setSettings');
+    });
+
 });
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

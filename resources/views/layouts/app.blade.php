@@ -32,13 +32,13 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Switchery -->
-    <link href="vendors/switchery/dist/switchery.min.css" rel="stylesheet">
+    <link href="/vendors/switchery/dist/switchery.min.css" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body class="nav-md">
-  <div id="app">
+  <!--div id="app"-->
     <div class="container body" style="max-width: 100%; padding:0;">
       <div class="main_container">
         <div class="col-md-3 left_col">
@@ -294,7 +294,7 @@
         </footer>
         <!-- /footer content -->
       </div>
-    </div>
+    <!--/div-->
 </div>
     <!-- Switchery -->
     <script src="/vendors/switchery/dist/switchery.min.js"></script>

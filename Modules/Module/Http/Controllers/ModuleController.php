@@ -6,14 +6,12 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use \Module;
-use App\Http\Controllers\PublicController;
 
 class ModuleController extends Controller
 {
 
-    public function __construct ( PublicController $publicController )
+    public function __construct (  )
     {
-        $this->publicController = $publicController;
     }
     /**
      * Muestra el listado de modulos, permite activarlos/desactivarlos y si hay configurador acceder a el.
@@ -25,7 +23,7 @@ class ModuleController extends Controller
 
         $modules = Module::toCollection();
         
-        $categories = $this->publicController->getCategories($modules, true);
+        $categories = $this->getCategories($modules, true);
 
         foreach ($modules as $module) {
             if ($module->isEnabled() == true) {
@@ -69,6 +67,48 @@ class ModuleController extends Controller
         }
 
         return redirect('/module');
+    }
+
+    /**
+     * Obtiene un listado de las categorias  para los modulos
+     *
+     * @return categories
+     */
+    public function getCategories($modules, $display)
+    {
+        $list = [];
+        $modDisp = false;
+
+        foreach ($modules as $module) {
+            $enable = $module->isEnabled();
+            if ($enable) {
+                $conf['modDisp'] = config($module->getLowerName() . '.display', 'true');
+                $conf['category'] = config($module->getLowerName() . '.category', '');
+            } else {
+                $config = include(base_path() . '/Modules/' .  $module->getName() . '/Config/config.php');
+                $conf['modDisp'] = $config['display'];
+                $conf['category'] = $config['category'];
+            }
+
+            if ($display == true) {
+                $modDisp = $conf['modDisp'];
+
+                if ($modDisp == true) {
+                    $category = $conf['category'];
+
+                    if (!in_array($category, $list)) {
+                        $list[] = $category;
+                    }
+                }
+            } else {
+                $category = $conf['category'];
+
+                if (!in_array($category, $list)) {
+                    $list[] = $category;
+                }
+            }
+        }
+        return $list;
     }
 
     /**

@@ -11,34 +11,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\ModuleController;
 
 class PublicController extends Controller
 {
-    public function __construct ( ModuleController $moduleController )
+    public function __construct (  )
     {
-      $this->moduleController = $moduleController;
     }
 
 
-    /**
-     * Esta función devuelve la lista de categorías de los modulos.
-     *
-     * La información la toma desde el ModuleController global
-     *
-     * @param 
-     *      $module es la colceccion de modulos para obtener sus categorias.
-     *      $display es un boleano que indica: 
-     *        true = Solo mostrar los que son desplegables
-     *        false = Mostrar todos
-     */
-    public function getCategories ($module, $display)
-    {
-      return $this->moduleController->getCategories($module, $display);
-    }
-
-    public function changeModuleStatus(Request $request)
-    {
-      return $this->moduleController->changeModuleStatus($request);
-    }
 }

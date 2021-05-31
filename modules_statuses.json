@@ -1,5 +1,6 @@
 {
     "User": true,
     "Module": true,
-    "Roles": true
+    "Roles": true,
+    "Warehouse": true
 }
