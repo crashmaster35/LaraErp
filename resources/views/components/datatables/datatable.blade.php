@@ -73,6 +73,7 @@
                                                                                         'data'      => This parameter is the most important, need to define the column name
                                                                                                        retrieved from the ajax call, this is the record name not the title of the
                                                                                                        column. For example: address1, that is the field name on the database.
+                                                                                        'type'      => Define the type of the field, string or date, to parse
                                                                                         'class'     => Aditional css class to be added to each column to make the design,
                                                                                         'url'       => The url of the field to be pointed, you can create complex links from the
                                                                                                        information you retrieved from the database, just adding **field= and the
@@ -115,6 +116,7 @@
                 @foreach ($dtColumns as $column)
                     @if (strpos($column['data'], '->') !== false)
                         @php
+                        dd($column);
                             $startField = $column['data'];
                             $relations = explode('->', $startField);
                             $value = $data;
@@ -129,12 +131,14 @@
                                 }
                             }
                             $finalValue = $value;
+                            $finalType = $column['type'];
                             $isRelation = true;
                         @endphp
                     @else
                         @php
                             $startField = $column['data'];
                             $finalValue = $data[$column['data']];
+                            $finalType  = $column['type'];
                             $finalField = $startField;
                             $isRelation = false;
                         @endphp
@@ -154,14 +158,26 @@
                         <td style="{{ $column['style'] }}"><a href="{!! $column['url'] !!}">{!! $finalValue !!}</a></td>
                     @else
                         @if ($isRelation)
-                            @if ((strlen($finalValue) > 5) && (is_numeric(strtotime($finalValue))))
-                                <td>{!! date('j M Y h:i a', strtotime($finalValue)) !!}</td>
+                            @if ($finalType == 'date')
+                                @if ((strlen($finalValue) > 5) && (is_numeric(strtotime($finalValue))))
+                                    <td>{!! date('j M Y h:i a', strtotime($finalValue)) !!}</td>
+                                @else
+                                    <td style="{{ $column['style']}}">{{ $finalValue }}</td>
+                                @endif
                             @else
                                 <td style="{{ $column['style']}}">{{ $finalValue }}</td>
                             @endif
                         @else
-                            @if ((strlen($data[$column['data']]) > 5) && (is_numeric(strtotime($data[$column['data']]))))
-                                <td>{!! date('j M Y h:i a', strtotime($data[$column['data']])) !!}</td>
+                            @if ($finalType == 'date')
+                                @if ((strlen($data[$column['data']]) > 5) && (is_numeric(strtotime($data[$column['data']]))))
+                                    <td>{!! date('j M Y h:i a', strtotime($data[$column['data']])) !!}</td>
+                                @else
+                                    @if (array_key_exists($column['data'], $data))
+                                        <td style="{{ $column['style'] }}">{!! $data[$column['data']] !!}</td>
+                                    @else
+                                        <td> </td>
+                                    @endif
+                                @endif
                             @else
                                 @if (array_key_exists($column['data'], $data))
                                     <td style="{{ $column['style'] }}">{!! $data[$column['data']] !!}</td>

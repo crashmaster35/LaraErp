@@ -1,6 +1,6 @@
 <?php
 /************************************************************************************************
-  Este archivo cuenta con la configuración completa del modulo. 
+  Este archivo cuenta con la configuración completa del modulo.
 
   Sus variables son:
 
@@ -16,7 +16,7 @@ return [
     'name' => 'Pagos',
     'category' => 'PAGOS',
     'description' => 'Este módulo controla los pagos tanto de colegiaturas como pagos extras de los alumnos.',
-    'required' => true,             
+    'required' => false,
     'display' => true,
     'hasSettings' => false
 ];

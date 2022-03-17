@@ -15,6 +15,11 @@ class CreateCampusesTable extends Migration
     {
         Schema::create('campuses', function (Blueprint $table) {
             $table->id();
+            $table->string('name', 100);
+            $table->text('address');
+            $table->string('phone')->nullable();
+            $table->string('email', 100)->nullable();
+            $table->string('whatsapp', 25)->nullable();
             $table->timestamps();
         });
     }

@@ -56,6 +56,7 @@ class AlumnosController extends Controller
                 [
                   'title' => 'Fecha de Nacimiento',
                   'data' => 'fecha_nac',
+                  'type' => 'date'
                 ],
                 [
                   'title' => 'Correo Electronico',
@@ -69,7 +70,9 @@ class AlumnosController extends Controller
                   'data' => 'tel_casa',
                 ],
                 [
-                  'data' => 'activo',
+                  'title' => 'Fecha de Alta',
+                  'data' => 'created_at',
+                  'type' => 'date'
                 ]
             ]
         ]);
@@ -103,6 +106,7 @@ class AlumnosController extends Controller
                 [
                   'title' => 'Fecha de Nacimiento',
                   'data' => 'fecha_nac',
+                  'type' => 'date'
                 ],
                 [
                   'title' => 'Correo Electronico',
@@ -116,7 +120,9 @@ class AlumnosController extends Controller
                   'data' => 'tel_casa',
                 ],
                 [
-                  'data' => 'activo',
+                  'title' => 'Fecha de Registro',
+                  'data' => 'created_at',
+                  'type' => 'date'
                 ]
             ]
         ]);

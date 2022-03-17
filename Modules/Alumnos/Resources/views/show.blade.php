@@ -27,6 +27,9 @@
                             @if (Module::isEnabled('Inscripciones'))
                                 <div style="float: right;"><a href="/inscripciones/{{ $student->id }}/inscribir" class="btn btn-warning" style="color:black;">Inscribir Alumno</a></div>
                             @endif
+                            @if (Module::isEnabled('Pagos'))
+                                <div style="float: right;"><a href="/pagos/{{ $student->id }}/" class="btn btn-dark" style="color:white;">Ver Pagos</a></div>
+                            @endif
                         @endif
                         <div class="clearfix"></div>
                         <p>Datos generales del alumno</p>

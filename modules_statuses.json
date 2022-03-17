@@ -11,7 +11,7 @@
     "Calificaciones": true,
     "Asistencias": true,
     "Inscripciones": true,
-    "Pagos": true,
+    "Pagos": false,
     "Materias": true,
     "Cursos": true,
     "PagoDocentes": true,
@@ -19,5 +19,6 @@
     "AsistenciasDocentes": true,
     "Institucion": true,
     "Docentes": true,
-    "HorarioDocentes": true
+    "HorarioDocentes": true,
+    "Personal": true
 }

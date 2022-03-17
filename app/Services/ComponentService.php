@@ -87,6 +87,7 @@ class ComponentService implements ComponentInterface
                 $columns[$i]['visible'] = (array_key_exists('visible', $column)?$column['visible']:'true');
                 $columns[$i]['show'] = (array_key_exists('show', $column)?$column['show']:'true');
                 $columns[$i]['style'] = (array_key_exists('style', $column)?$column['style']:'');
+                $columns[$i]['type'] = (array_key_exists('type', $column)?$column['type']:'string');
                 $i++;
             }
         } else {

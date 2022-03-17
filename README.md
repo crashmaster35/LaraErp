@@ -1,6 +1,6 @@
 ## Acerca de LaraErp
 
-LaraErp es un ERP/CMS/POS empresarial de codigo abierto, totalmente modular. Para los desarrolladores se encuentra creado en Laravel 8, permite la creación de modulos interconectados que al instalarlos pueden agregar opciones y funcionalidades a los diversos modulos ya incuidos en el sistema. 
+LaraErp es un ERP empresarial de codigo abierto, totalmente modular. Para los desarrolladores se encuentra creado en Laravel 8, permite la creación de modulos interconectados que al instalarlos pueden agregar opciones y funcionalidades a los diversos modulos ya incuidos en el sistema. 
 
 ## Desarrolladores
 
@@ -13,25 +13,13 @@ Se les invita a participar en el desarrollo de LaraErp bajo las siguientes condi
 
 ## Modulos en desarrollo 
 
-Se requieren desarrolladores para los siguientes módulos:
+Debido a que el sistema es modular, se pueden desarrollar modulos casi para cualquier cosa. Se encuentran publicados los modulos de:
 
-- [ ] Usuarios
-- [ ] Empresa
-- [ ] Almacenes
-- [ ] Productos
-- [ ] Servicios
-- [ ] Proveedores
-- [ ] Clientes
-- [ ] TPV
-- [ ] Pedidos
-- [ ] Presupuestos
-- [ ] Facturas
-- [ ] Bancos
-- [ ] Caja
-- [ ] Contabilidad
-- [ ] Inventarios
+- [ ] Modulos = Módulo base de configuración para activar y desactivar modulos.
+- [ ] Alumnos = Sistema de registro de alumnos para escuelas.
+- [ ] Planteles = Sistema de registro de los planteles escolares de la institucion.
 
-Teniendo los módulos básicos se pensará en liberar la version 1.
+Se esta trabajando en modulos de un sistema de control escolar
 
 ## Seguridad y vulnerabilidades
 
@@ -46,13 +34,14 @@ Queda estrictamente prohibida su venta.
 ## Lista por hacer
 
 Modulos:
-  - Modulos
   - Usuarios
-  - Almacenes
-  - Proveedores
-  - Productos
+  - Roles
 
-Concluido lo anterior se puede proceder a otras secciones
+Dentro del core del sistema falta: 
+
+  - Menus 
+  - Pantallas ingreso
+  - Pantallas especiales (500, 401, etc)
 
 ## Se busca
 

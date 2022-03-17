@@ -16,7 +16,7 @@ return [
     'name' => 'Alumnos',
     'category' => 'ALUMNOS',
     'description' => 'Este módulo controla los datos y manejo de alumnos.',
-    'required' => true,
+    'required' => false,
     'display' => true,
     'hasSettings' => false
 ];
