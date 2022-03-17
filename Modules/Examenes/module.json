@@ -1,0 +1,13 @@
+{
+    "name": "Examenes",
+    "alias": "examenes",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Examenes\\Providers\\ExamenesServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

@@ -13,9 +13,9 @@
 ************************************************************************************************/
 
 return [
-    'name' => 'Calificaciones',
+    'name' => 'Examenes',
     'category' => 'ALUMNOS',
-    'description' => 'Este módulo controla las calificaciones de los alumnos por materia',
+    'description' => 'Este módulo controla los examenes que tendran los alumnos, extraordinarios y ordinarios.',
     'required' => false,
     'display' => true,
     'hasSettings' => false

@@ -1,6 +1,6 @@
 <?php
 /************************************************************************************************
-  Este archivo cuenta con la configuración completa del modulo. 
+  Este archivo cuenta con la configuración completa del modulo.
 
   Sus variables son:
 
@@ -16,7 +16,7 @@ return [
     'name' => 'Asistencias',
     'category' => 'DOCENTES',
     'description' => 'Este módulo controla los datos y manejo de alumnos.',
-    'required' => true,             
+    'required' => false,
     'display' => true,
     'hasSettings' => false
 ];

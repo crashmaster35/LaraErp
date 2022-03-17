@@ -1,6 +1,6 @@
 <?php
 /************************************************************************************************
-  Este archivo cuenta con la configuración completa del modulo. 
+  Este archivo cuenta con la configuración completa del modulo.
 
   Sus variables son:
 
@@ -16,7 +16,7 @@ return [
     'name' => 'Horarios',
     'category' => 'CICLO ESCOLAR',
     'description' => 'Este módulo controla los horarios por grupos',
-    'required' => true,             
+    'required' => false,
     'display' => true,
     'hasSettings' => false
 ];

@@ -1,6 +1,6 @@
 <?php
 /************************************************************************************************
-  Este archivo cuenta con la configuración completa del modulo. 
+  Este archivo cuenta con la configuración completa del modulo.
 
   Sus variables son:
 
@@ -16,7 +16,7 @@ return [
     'name' => 'Pago a Docentes',
     'category' => 'PAGOS',
     'description' => 'Este módulo controla el pago de horas de clase a los docentes.',
-    'required' => true,             
+    'required' => false,
     'display' => true,
     'hasSettings' => false
 ];

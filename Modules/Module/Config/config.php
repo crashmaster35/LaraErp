@@ -1,6 +1,6 @@
 <?php
 /************************************************************************************************
-  Este archivo cuenta con la configuración completa del modulo. 
+  Este archivo cuenta con la configuración completa del modulo.
 
   Sus variables son:
 
@@ -16,7 +16,7 @@ return [
     'name' => 'Modulos',
     'category' => 'CONFIGURACION',
     'description' => 'Este modulo controla todos los modulos instalados en LaraErp',
-    'required' => true,             
+    'required' => true,
     'display' => true,
     'hasSettings' => false
 ];

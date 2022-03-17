@@ -1,6 +1,6 @@
 <?php
 /************************************************************************************************
-  Este archivo cuenta con la configuración completa del modulo. 
+  Este archivo cuenta con la configuración completa del modulo.
 
   Sus variables son:
 
@@ -16,7 +16,7 @@ return [
     'name' => 'Asistencias',
     'category' => 'ALUMNOS',
     'description' => 'En este módulo se el Instructor ingresará las asistencias de los alumnos por grupo',
-    'required' => true,             
+    'required' => false,
     'display' => true,
     'hasSettings' => false
 ];

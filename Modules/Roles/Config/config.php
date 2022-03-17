@@ -1,6 +1,6 @@
 <?php
 /************************************************************************************************
-  Este archivo cuenta con la configuración completa del modulo. 
+  Este archivo cuenta con la configuración completa del modulo.
 
   Sus variables son:
 
@@ -16,7 +16,7 @@ return [
     'name' => 'Roles',
     'category' => 'USUARIOS',
     'description' => 'Este modulo controla todos los roles de usuarios dentro del sistema, asi como los permisos.',
-    'required' => true,             
+    'required' => false,
     'display' => true,
-    'hasSettings' => true
+    'hasSettings' => false
 ];
