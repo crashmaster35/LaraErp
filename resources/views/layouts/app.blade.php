@@ -10,23 +10,23 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'LaraERP') }}</title>
 
     <!-- jQuery -->
-    <!--script src="/vendors/jquery/dist/jquery.min.js" async></script-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" async></script>
+    <!--script src="/vendors/jquery/dist/jquery.min.js" async></!--script-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
     <!-- Bootstrap -->
     <script src="/vendors/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
-    
+
     <!-- Bootstrap -->
     <link href="/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="/vendors/build/css/custom.min.css" rel="stylesheet">
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -36,10 +36,11 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @yield('scripts')
 </head>
 <body class="nav-md">
   <!--div id="app"-->
-    <div class="container body" style="max-width: 100%; padding:0;">
+    <div class="container body" style="max-width: 100%; padding:0;background: #2A3F54;">
       <div class="main_container">
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
@@ -159,7 +160,7 @@
                         <li><a href="#level1_2">Level One</a>
                         </li>
                     </ul>
-                  </li>                  
+                  </li>
                   <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
                 </ul>
               </div>
@@ -170,13 +171,13 @@
             <!-- /menu footer buttons -->
             <div class="sidebar-footer hidden-small">
               <a data-toggle="tooltip" data-placement="top" title="Settings">
-                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-cog" aria-hidden="true" style="color:#FFF;"></span>
               </a>
               <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true" style="color:#FFF;"></span>
               </a>
               <a data-toggle="tooltip" data-placement="top" title="Lock">
-                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-eye-close" aria-hidden="true" style="color:#FFF;"></span>
               </a>
               <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
                 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
@@ -297,7 +298,7 @@
     <!--/div-->
 </div>
     <!-- Switchery -->
-    <script src="/vendors/switchery/dist/switchery.min.js"></script>
+    <script src="/vendors/switchery/dist/switchery.min.js" defer></script>
     <!-- Custom Theme Scripts -->
     <script src="/vendors/build/js/custom.min.js" defer></script>
 

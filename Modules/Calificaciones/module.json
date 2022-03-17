@@ -1,0 +1,13 @@
+{
+    "name": "Calificaciones",
+    "alias": "calificaciones",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Calificaciones\\Providers\\CalificacionesServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

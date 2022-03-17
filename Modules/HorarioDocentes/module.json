@@ -1,0 +1,13 @@
+{
+    "name": "HorarioDocentes",
+    "alias": "horariodocentes",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\HorarioDocentes\\Providers\\HorarioDocentesServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

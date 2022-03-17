@@ -1,0 +1,13 @@
+{
+    "name": "Cursos",
+    "alias": "cursos",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Cursos\\Providers\\CursosServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

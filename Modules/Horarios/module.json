@@ -1,0 +1,13 @@
+{
+    "name": "Horarios",
+    "alias": "horarios",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Horarios\\Providers\\HorariosServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

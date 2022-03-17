@@ -1,0 +1,14 @@
+{
+    "name": "Alumnos",
+    "alias": "alumnos",
+    "description": "Modulo de Control de Alumnos",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Alumnos\\Providers\\AlumnosServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
+

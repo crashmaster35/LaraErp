@@ -30,7 +30,7 @@
                         <li>
                           <label>
                             @if ($module['required'] == false)
-                              <a href="/module/toggleModule?module={{$module['id']}}">
+                              <a href="/modules/toggleModule?module={{$module['id']}}">
                             @endif
                               <input type="checkbox" class="js-switch" {{ ($module['status'] == 'enabled')?'checked': '' }} {{ ($module['required'] == true)? 'disabled="disabled"' : '' }} data-module="{{ $module['id'] }}" />
                             @if ($module['required'] == false)                              

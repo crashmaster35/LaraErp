@@ -1,0 +1,13 @@
+{
+    "name": "Inscripciones",
+    "alias": "inscripciones",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Inscripciones\\Providers\\InscripcionesServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

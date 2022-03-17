@@ -1,0 +1,13 @@
+{
+    "name": "Planteles",
+    "alias": "planteles",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Planteles\\Providers\\PlantelesServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

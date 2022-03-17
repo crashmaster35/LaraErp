@@ -1,6 +1,23 @@
 {
-    "User": true,
+    "User": false,
     "Module": true,
     "Roles": true,
-    "Warehouse": true
+    "Warehouse": true,
+    "Alumnos": true,
+    "Planteles": true,
+    "Grupos": true,
+    "Horarios": true,
+    "Instructores": true,
+    "Calificaciones": true,
+    "Asistencias": true,
+    "Inscripciones": true,
+    "Pagos": true,
+    "Materias": true,
+    "Cursos": true,
+    "PagoDocentes": true,
+    "AsistenciaDocentes": true,
+    "AsistenciasDocentes": true,
+    "Institucion": true,
+    "Docentes": true,
+    "HorarioDocentes": true
 }

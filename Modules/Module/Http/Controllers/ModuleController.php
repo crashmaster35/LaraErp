@@ -66,7 +66,7 @@ class ModuleController extends Controller
             $module->enable();
         }
 
-        return redirect('/module');
+        return redirect('/modules');
     }
 
     /**

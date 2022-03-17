@@ -1,0 +1,13 @@
+{
+    "name": "PagoDocentes",
+    "alias": "pagodocentes",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\PagoDocentes\\Providers\\PagoDocentesServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

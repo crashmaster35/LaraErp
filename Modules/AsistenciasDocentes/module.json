@@ -1,0 +1,13 @@
+{
+    "name": "AsistenciasDocentes",
+    "alias": "asistenciasdocentes",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AsistenciasDocentes\\Providers\\AsistenciasDocentesServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

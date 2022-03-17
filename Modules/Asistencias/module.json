@@ -1,0 +1,13 @@
+{
+    "name": "Asistencias",
+    "alias": "asistencias",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Asistencias\\Providers\\AsistenciasServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

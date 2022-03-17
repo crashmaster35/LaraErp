@@ -1,0 +1,13 @@
+{
+    "name": "Docentes",
+    "alias": "docentes",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Docentes\\Providers\\DocentesServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
