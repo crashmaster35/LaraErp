@@ -14,8 +14,8 @@
 
 return [
     'name' => 'Inscripciones',
-    'category' => 'PAGOS',
-    'description' => 'Este módulo controla el registro de los pagos de inscripcion de los alumnos y genera la matricula.',
+    'category' => 'CICLO ESCOLAR',
+    'description' => 'Este módulo controla el registro de inscripcion de los alumnos al grupo y genera su matricula.',
     'required' => false,
     'display' => true,
     'hasSettings' => false

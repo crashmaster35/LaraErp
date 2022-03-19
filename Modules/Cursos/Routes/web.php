@@ -1,5 +1,5 @@
 <?php
-
+use Modules\Cursos\Http\Controllers\CursosController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,5 +12,9 @@
 */
 
 Route::prefix('cursos')->group(function() {
-    Route::get('/', 'CursosController@index');
+    Route::get('/', [CursosController::class, 'index'])->name('showCoursesList');
+    Route::get('/registro', [CursosController::class, 'create'])->name('createCourses');
+    Route::put('/registro', [CursosController::class, 'store']);
+    Route::get('/{id}', [CursosController::class, 'show'])->name('showCourses');
+    Route::post('/{id}', [CursosController::class, 'update']);
 });

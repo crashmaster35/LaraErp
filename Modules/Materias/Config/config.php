@@ -14,7 +14,7 @@
 
 return [
     'name' => 'Materias',
-    'category' => 'CICLO ESCOLAR',
+    'category' => 'CONFIGURACION',
     'description' => 'Este módulo controla el ingreso de las materias de la curricula para el curso tomado.',
     'required' => false,
     'display' => true,

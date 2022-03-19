@@ -5,16 +5,49 @@ namespace Modules\Cursos\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use App\Services\ComponentService;
+
+use Modules\Cursos\Services\CoursesService;
 
 class CursosController extends Controller
 {
+    public function __construct(CoursesService $coursesService)
+    {
+        $this->coursesService = $coursesService;
+    }
     /**
      * Display a listing of the resource.
      * @return Renderable
      */
-    public function index()
+    public function index(ComponentService $componentService)
     {
-        return view('cursos::index');
+        $courses = $this->coursesService->getAllCourses();
+
+        $object = $componentService->dataTableConfigObject([
+            'dtName' => 'planteles',
+            'dtId' => 'CampusesTable',
+            'dtServerSide' => 'false',
+            'dtData' => $courses->toArray(),
+            'dtExport' => 'true',
+            'dtSearchBox' => 'true',
+            'dtCount' => 1,
+            'dtColumns' => [
+                [
+                  'data' => 'id',
+                  'url' => url('/cursos/**field=id**'),
+                ],
+                [
+                  'title' => 'Curso',
+                  'data' => 'name',
+                ],
+                [
+                  'title' => 'Duración',
+                  'data' => 'length',
+                ]
+            ]
+        ]);
+
+        return view('cursos::index', ['dtObjectCourses' => $object]);
     }
 
     /**
@@ -23,7 +56,7 @@ class CursosController extends Controller
      */
     public function create()
     {
-        return view('cursos::create');
+        return view('cursos::show', ['course' => null]);
     }
 
     /**
@@ -33,7 +66,11 @@ class CursosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if ($this->coursesService->store($request->all())) {
+            return redirect()->route('showCoursesList')->with('successmsg', 'El Curso ha sido guardado satisfactoriamente');
+        } else {
+            return redirect()->route('showCoursesList')->with('errormsg', 'Hubo un problema al guardar el Curso, por favor intentelo mas tarde o contacte a su departamento de sistemas.');
+        };
     }
 
     /**
@@ -43,7 +80,7 @@ class CursosController extends Controller
      */
     public function show($id)
     {
-        return view('cursos::show');
+        return view('cursos::show', ['courses' => $this->coursesService->getCourseById($id)]);
     }
 
     /**
@@ -64,7 +101,11 @@ class CursosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if ($this->coursesService->update($request->all())) {
+            return redirect()->route('showCoursesList')->with('successmsg', 'El Curso ha sido guardado satisfactoriamente');
+        } else {
+            return redirect()->route('showCoursesList')->with('errormsg', 'Hubo un problema al guardar el Curso, por favor intentelo mas tarde o contacte a su departamento de sistemas.');
+        };
     }
 
     /**

@@ -1,4 +1,5 @@
 <?php
+use Modules\Grupos\Http\Controllers\GruposController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,5 +13,9 @@
 */
 
 Route::prefix('grupos')->group(function() {
-    Route::get('/', 'GruposController@index');
+    Route::get('/', [GruposController::class, 'index'])->name('showGroupsList');
+    Route::get('/registro', [GruposController::class, 'create'])->name('createGroups');
+    Route::put('/registro', [GruposController::class, 'store']);
+    Route::get('/{id}', [GruposController::class, 'show'])->name('showGroups');
+    Route::post('/{id}', [GruposController::class, 'update']);
 });

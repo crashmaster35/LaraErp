@@ -13,8 +13,13 @@ class CreateGroupTable extends Migration
      */
     public function up()
     {
-        Schema::create('group', function (Blueprint $table) {
+        Schema::create('groups', function (Blueprint $table) {
             $table->id();
+            $table->string('name', 100);
+            $table->bigInteger('courses_id');
+            $table->bigInteger('campuses_id');
+            $table->integer('total')->unsigned();
+            $table->text('notes')->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +31,6 @@ class CreateGroupTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('group');
+        Schema::dropIfExists('groups');
     }
 }

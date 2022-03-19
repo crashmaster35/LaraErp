@@ -5,25 +5,89 @@ namespace Modules\Pagos\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use App\Services\ComponentService;
+
+use Modules\Alumnos\Services\AlumnosService;
+use Modules\Pagos\Services\PagosService;
 
 class PagosController extends Controller
 {
+    public function __construct(PagosService $pagosService, AlumnosService $alumnosService)
+    {
+        $this->pagosService = $pagosService;
+        $this->alumnosService = $alumnosService;
+    }
+
     /**
      * Display a listing of the resource.
      * @return Renderable
      */
-    public function index()
+    public function index($id, ComponentService $componentService)
     {
-        return view('pagos::index');
+        $payments = $this->pagosService->getPaymetsByStudentId($id);
+        $student = $this->alumnosService->getStudentById($id);
+
+        $object = $componentService->dataTableConfigObject([
+            'dtName' => 'pagos',
+            'dtId' => 'PaymentsTable',
+            'dtServerSide' => 'false',
+            'dtData' => $payments->toArray(),
+            'dtExport' => 'true',
+            'dtSearchBox' => 'true',
+            'dtCount' => 1,
+            'dtColumns' => [
+                [
+                  'data' => 'id',
+                  'url' => url('/pagos/'.$id.'/**field=id**'),
+                ],
+                [
+                  'title' => 'Pago',
+                  'data' => 'type',
+                ],
+                [
+                  'title' => 'Cantidad',
+                  'data' => 'amount',
+                ],
+                [
+                  'title' => 'Descripción',
+                  'data' => 'notes',
+                ],
+                [
+                  'title' => 'Bank',
+                  'data' => 'bank',
+                ],
+                [
+                  'title' => 'Transacción',
+                  'data' => 'transaction',
+                ],
+                [
+                  'title' => 'Fecha de Transacción',
+                  'data' => 'transaction_date',
+                  'type' => 'date',
+                ],
+                [
+                  'title' => 'Hora de Transacción',
+                  'data' => 'transaction_time',
+                ],
+                [
+                  'title' => 'Fecha de Registro',
+                  'data' => 'created_at',
+                  'type' => 'date',
+                ]
+            ]
+        ]);
+
+        return view('pagos::index', ['dtObjectPayments' => $object, 'id' => $id, 'student' => $student]);
+
     }
 
     /**
      * Show the form for creating a new resource.
      * @return Renderable
      */
-    public function create()
+    public function create($id)
     {
-        return view('pagos::create');
+        return view('pagos::show', ['pagos' => null, 'id' => $id]);
     }
 
     /**
@@ -33,8 +97,14 @@ class PagosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request->all());
+        if ($this->coursesService->store($request->all())) {
+            return redirect()->route('showCoursesList')->with('successmsg', 'El Curso ha sido guardado satisfactoriamente');
+        } else {
+            return redirect()->route('showCoursesList')->with('errormsg', 'Hubo un problema al guardar el Curso, por favor intentelo mas tarde o contacte a su departamento de sistemas.');
+        };
     }
+
 
     /**
      * Show the specified resource.

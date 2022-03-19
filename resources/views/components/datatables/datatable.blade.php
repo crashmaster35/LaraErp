@@ -116,7 +116,6 @@
                 @foreach ($dtColumns as $column)
                     @if (strpos($column['data'], '->') !== false)
                         @php
-                        dd($column);
                             $startField = $column['data'];
                             $relations = explode('->', $startField);
                             $value = $data;

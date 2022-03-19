@@ -36,27 +36,24 @@
                     </ul>
                 </li>
             @endif
-            @if (Module::isEnabled('Materias') || Module::isEnabled('Grupos') || Module::isEnabled('Horarios'))
+            @if (Module::isEnabled('Inscripciones') || Module::isEnabled('Grupos') || Module::isEnabled('Horarios'))
                 <li><a><i class="fa fa-table"></i> Ciclo Escolar <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                        @if (Module::isEnabled('Materias'))
-                            <li><a href="/materias">Materias</a></li>
-                        @endif
                         @if (Module::isEnabled('Grupos'))
                             <li><a href="/grupos">Grupos</a></li>
                         @endif
                         @if (Module::isEnabled('Horarios'))
                             <li><a href="/horarios">Horarios</a></li>
                         @endif
-                    </ul>
-                </li>
-            @endif
-            @if (Module::isEnabled('Inscripciones') || Module::isEnabled('PagoDocentes') || Module::isEnabled('Pagos'))
-                <li><a><i class="fa fa-dolar"></i>Pagos <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
                         @if (Module::isEnabled('Inscripciones'))
                             <li><a href="/inscripciones">Inscripciones</a></li>
                         @endif
+                    </ul>
+                </li>
+            @endif
+            @if (Module::isEnabled('PagoDocentes') || Module::isEnabled('Pagos'))
+                <li><a><i class="fa fa-credit-card"></i>Pagos <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
                         @if (Module::isEnabled('PagoDocentes'))
                             <li><a href="/pago_personal">Pago Personal</a></li>
                         @endif
@@ -67,7 +64,7 @@
                 </li>
             @endif
             @if (Module::isEnabled('Roles') || Module::isEnabled('User'))
-                <li><a><i class="fa fa-dolar"></i>Usuarios <span class="fa fa-chevron-down"></span></a>
+                <li><a><i class="fa fa-users"></i>Usuarios <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                         @if(Module::isEnabled('Roles'))
                             <li><a href="/roles">Roles</a></li>
@@ -78,7 +75,7 @@
                     </ul>
                 </li>
             @endif
-            @if (Module::isEnabled('Module') || Module::isEnabled('Institucion') || Module::isEnabled('Planteles') || Module::isEnabled('Personal') || Module::isEnabled('Cursos'))
+            @if (Module::isEnabled('Materias') || Module::isEnabled('Module') || Module::isEnabled('Institucion') || Module::isEnabled('Planteles') || Module::isEnabled('Personal') || Module::isEnabled('Cursos'))
                 <li><a><i class="fa fa-edit"></i> Configuración <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                         @if (Module::isEnabled('Module'))
@@ -95,6 +92,9 @@
                         @endif
                         @if (Module::isEnabled('Cursos'))
                             <li><a href="/cursos">Cursos</a></li>
+                        @endif
+                        @if (Module::isEnabled('Materias'))
+                            <li><a href="/materias">Materias</a></li>
                         @endif
                     </ul>
                 </li>

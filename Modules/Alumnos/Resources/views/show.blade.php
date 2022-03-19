@@ -24,8 +24,10 @@
                         <div style="float: right;"><a href="/alumnos/" class="btn btn-round btn-primary">Regresar</a></div>
                         @if ($student)
                             <div style="float: right;"><button class="btn btn-success" id="editaButton">Editar</button></div>
-                            @if (Module::isEnabled('Inscripciones'))
-                                <div style="float: right;"><a href="/inscripciones/{{ $student->id }}/inscribir" class="btn btn-warning" style="color:black;">Inscribir Alumno</a></div>
+                            @if ($student->matricula == null)
+                                @if (Module::isEnabled('Inscripciones'))
+                                    <div style="float: right;"><a href="/inscripciones/{{ $student->id }}/inscribir" class="btn btn-warning" style="color:black;">Inscribir Alumno</a></div>
+                                @endif
                             @endif
                             @if (Module::isEnabled('Pagos'))
                                 <div style="float: right;"><a href="/pagos/{{ $student->id }}/" class="btn btn-dark" style="color:white;">Ver Pagos</a></div>

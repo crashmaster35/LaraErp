@@ -13,8 +13,16 @@ class CreatePaymentTable extends Migration
      */
     public function up()
     {
-        Schema::create('payment', function (Blueprint $table) {
+        Schema::create('payments', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('student_id');
+            $table->enum('type', ['INSCRIPCION', 'MENSUALIDAD', 'EXAMEN EXTRAORDINARIO', 'BLS', 'PHTLS', 'IPR', 'OTROS'])->default('MENSUALIDAD');
+            $table->double('amount',2,2);
+            $table->text('notes')->nullable();
+            $table->text('bank', 100);
+            $table->string('transaction', 100)->nullable();
+            $table->date('transaction_date');
+            $table->time('transaction_time');
             $table->timestamps();
         });
     }
@@ -26,6 +34,6 @@ class CreatePaymentTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('payment');
+        Schema::dropIfExists('payments');
     }
 }

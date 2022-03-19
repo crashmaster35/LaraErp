@@ -1,5 +1,6 @@
 <?php
-
+use Modules\Alumnos\Http\Controllers\AlumnosController;
+use Modules\Pagos\Http\Controllers\PagosController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,5 +13,9 @@
 */
 
 Route::prefix('pagos')->group(function() {
-    Route::get('/', 'PagosController@index');
+    Route::get('/', [AlumnosController::class, 'index'])->name('studentIndexList');
+    Route::get('/{id}', [PagosController::class, 'index'])->name('paymentStudentList');
+    Route::get('/{id}/registro', [PagosController::class, 'create'])->name('createPayment');
+    Route::put('/{id}/registro', [PagosController::class, 'store']);
+
 });
