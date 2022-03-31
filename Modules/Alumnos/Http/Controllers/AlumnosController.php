@@ -22,7 +22,7 @@ class AlumnosController extends Controller
      */
     public function index(ComponentService $componentService)
     {
-        $students = $this->alumnosService->getAllStudents();
+        $students = $this->alumnosService->getAllStudentsNoMat();
         $studentsM = $this->alumnosService->getAllStudentsWithMat();
 
         $object = $componentService->dataTableConfigObject([

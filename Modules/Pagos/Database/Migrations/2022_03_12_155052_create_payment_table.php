@@ -15,14 +15,16 @@ class CreatePaymentTable extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('student_id');
+            $table->bigInteger('student_id')->unsigned();
+            $table->bigInteger('group_id')->unsigned()->nullable();
+            $table->integer('number')->unsigned()->nullable();
             $table->enum('type', ['INSCRIPCION', 'MENSUALIDAD', 'EXAMEN EXTRAORDINARIO', 'BLS', 'PHTLS', 'IPR', 'OTROS'])->default('MENSUALIDAD');
-            $table->double('amount',2,2);
+            $table->double('amount');
             $table->text('notes')->nullable();
-            $table->text('bank', 100);
-            $table->string('transaction', 100)->nullable();
-            $table->date('transaction_date');
-            $table->time('transaction_time');
+            $table->text('bank', 100)->nullable();
+            $table->string('transaction')->nullable();
+            $table->date('transaction_date')->nullable();
+            $table->time('transaction_time')->nullable();
             $table->timestamps();
         });
     }

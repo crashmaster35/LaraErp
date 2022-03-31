@@ -17,6 +17,7 @@ Debido a que el sistema es modular, se pueden desarrollar modulos casi para cual
 
 - [ ] Modulos = Módulo base de configuración para activar y desactivar modulos.
 - [ ] Alumnos = Sistema de registro de alumnos para escuelas.
+- [ ] Grupos = Modulo que permite la alta de grupos. Requiere los modulos de Planteles y Cursos
 - [ ] Planteles = Sistema de registro de los planteles escolares de la institucion.
 
 Se esta trabajando en modulos de un sistema de control escolar

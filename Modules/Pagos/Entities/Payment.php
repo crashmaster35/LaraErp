@@ -13,6 +13,8 @@ class payment extends Model
 
     protected $fillable = [
         'student_id',
+        'group_id',
+        'number',
         'type',
         'amount',
         'notes',

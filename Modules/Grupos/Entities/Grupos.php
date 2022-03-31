@@ -25,10 +25,10 @@ class grupos extends Model
 
     public function campus()
     {
-        return $this->belongsTo(\Modules\Planteles\Entities\campuses::class, 'campuses_id', 'id');
+        return $this->belongsTo(\Modules\Planteles\Entities\Campuses::class, 'campuses_id', 'id');
     }
     public function course()
     {
-        return $this->belongsTo(\Modules\Cursos\Entities\courses::class, 'courses_id', 'id');
+        return $this->belongsTo(\Modules\Cursos\Entities\Courses::class, 'courses_id', 'id');
     }
 }

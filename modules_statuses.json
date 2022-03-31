@@ -12,7 +12,7 @@
     "Asistencias": false,
     "Inscripciones": true,
     "Pagos": true,
-    "Materias": true,
+    "Materias": false,
     "Cursos": true,
     "PagoDocentes": false,
     "AsistenciaDocentes": true,

@@ -15,6 +15,9 @@ class CreateRegistrationTable extends Migration
     {
         Schema::create('registration', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('student_id')->unsigned();
+            $table->bigInteger('group_id')->unsigned();
+            $table->bigInteger('course_id')->unsigned();
             $table->timestamps();
         });
     }

@@ -4,7 +4,7 @@ namespace Modules\Planteles\Services;
 
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Illuminate\Support\Facades\Auth;
-use Modules\Planteles\Entities\campuses;
+use Modules\Planteles\Entities\Campuses;
 use \Carbon\Carbon;
 
 class CampusesService

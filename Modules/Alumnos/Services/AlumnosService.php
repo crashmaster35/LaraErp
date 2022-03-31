@@ -17,9 +17,14 @@ class AlumnosService
 
   public function getAllStudents()
   {
-    return Alumnos::where('matricula', null)->get();
+    return Alumnos::all();
   }
-  
+
+  public function getAllStudentsNoMat()
+  {
+    return Alumnos::where('matricula', '=', null)->get();
+  }
+
   public function getAllStudentsWithMat()
   {
     return Alumnos::where('matricula', '<>', null)->get();

@@ -14,5 +14,4 @@ use Illuminate\Http\Request;
 */
 
 Route::middleware('auth:api')->get('/inscripciones', function (Request $request) {
-    return $request->user();
 });

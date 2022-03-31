@@ -4,7 +4,7 @@ namespace Modules\Cursos\Services;
 
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Illuminate\Support\Facades\Auth;
-use Modules\Cursos\Entities\courses;
+use Modules\Cursos\Entities\Courses;
 use \Carbon\Carbon;
 
 class CoursesService
