@@ -2,6 +2,8 @@
 
 LaraErp es un ERP empresarial de codigo abierto, totalmente modular. Para los desarrolladores se encuentra creado en Laravel 8, permite la creación de modulos interconectados que al instalarlos pueden agregar opciones y funcionalidades a los diversos modulos ya incuidos en el sistema. 
 
+Actualmente los modulos estan enfocados al control escolar.
+
 ## Desarrolladores
 
 Se les invita a participar en el desarrollo de LaraErp bajo las siguientes condiciones:
