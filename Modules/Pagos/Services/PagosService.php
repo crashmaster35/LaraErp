@@ -20,35 +20,29 @@ class PagosService
     return Payment::where('student_id', $id)->get();
   }
 
-  public function getAllStudentsWithMat()
-  {
-    return Payment::where('matricula', '<>', null)->get();
-  }
-
-  public function getStudentById($id)
+  public function getPaymentById($id)
   {
     return Payment::where('id', $id)->first();
   }
 
-  public function update($student)
+  public function update($payment)
   {
-    $sid = $student['id'];
-    unset($student['id']);
-    unset($student['_method']);
-    unset($student['_token']);
-    $date = $student['fecha_nac'];
-    $student['fecha_nac'] = Carbon::parse($date);
-    return Payment::where('id', $sid)->update($student);
+    $sid = $payment['id'];
+    unset($payment['id']);
+    unset($payment['_method']);
+    unset($payment['_token']);
+    $date = $payment['transaction_date'];
+    $payment['transaction_date'] = Carbon::parse($date);
+    return Payment::where('id', $sid)->update($payment);
   }
 
-  public function store($student)
+  public function store($payment)
   {
-    unset($student['_method']);
-    unset($student['_token']);
-    $date = $student['fecha_nac'];
-    $student['fecha_nac'] = Carbon::parse($date);
-
-    return Payment::create($student);
+    unset($payment['_method']);
+    unset($payment['_token']);
+    $date = $payment['transaction_date'];
+    $payment['transaction_date'] = Carbon::parse($date);
+    return Payment::create($payment);
   }
 
 }

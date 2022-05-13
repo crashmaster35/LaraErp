@@ -1,0 +1,13 @@
+{
+    "name": "Becas",
+    "alias": "becas",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Becas\\Providers\\BecasServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

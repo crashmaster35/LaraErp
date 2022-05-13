@@ -75,7 +75,7 @@
                     </ul>
                 </li>
             @endif
-            @if (Module::isEnabled('Materias') || Module::isEnabled('Module') || Module::isEnabled('Institucion') || Module::isEnabled('Planteles') || Module::isEnabled('Personal') || Module::isEnabled('Cursos'))
+            @if (Module::isEnabled('Becas') || Module::isEnabled('Materias') || Module::isEnabled('Module') || Module::isEnabled('Institucion') || Module::isEnabled('Planteles') || Module::isEnabled('Personal') || Module::isEnabled('Cursos'))
                 <li><a><i class="fa fa-edit"></i> Configuración <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                         @if (Module::isEnabled('Module'))
@@ -95,6 +95,9 @@
                         @endif
                         @if (Module::isEnabled('Materias'))
                             <li><a href="/materias">Materias</a></li>
+                        @endif
+                        @if (Module::isEnabled('Becas'))
+                            <li><a href="/becas">Precios</a></li>
                         @endif
                     </ul>
                 </li>

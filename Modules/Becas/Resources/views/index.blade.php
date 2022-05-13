@@ -18,25 +18,24 @@
     <div class="">
         <div class="page-title">
             <div class="title_left">
-                <h3>Registro de Pagos</h3>
+                <h3>Precios</h3>
             </div>
         </div>
         <div class="clearfix"></div>
         <div class="row">
             <div class="col-md-12 col-sm-12">
                 <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <div class="x_panel">
-                            <div class="x_title">
-                                <h2>Alumnado</h2>
-                                <div class="clearfix"></div>
-                                <p>Seleccione el alumno y realice el registro de pago</p>
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="x_content">
-                                @component('components.datatables.datatable', $dtObjectAlumnos)
-                                @endcomponent
-                            </div>
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>Precios</h2>
+                            <div style="float: right;"><a href="/becas/registro" class="btn btn-info" style="color:white;">Registrar Precio</a></div>
+                            <div class="clearfix"></div>
+                            <p>Altas, Bajas y Modificaciones de Precios</p>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+                            @component('components.datatables.datatable', $dtObjectDiscounts)
+                            @endcomponent
                         </div>
                     </div>
                 </div>

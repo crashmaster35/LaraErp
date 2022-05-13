@@ -17,26 +17,23 @@
     @endif
     <div class="">
         <div class="page-title">
-            <div class="title_left">
-                <h3>Registro de Pagos</h3>
-            </div>
+            <h3>Pagos del Alumno <span style="color:green;"> {{ $student->nombres }} {{ $student->ap_paterno }} {{ $student->ap_materno }} </span> -  Mat: <span style="color:red;"> {{ $student->matricula??'Alumno No Inscrito' }}</span></h3>
         </div>
         <div class="clearfix"></div>
         <div class="row">
             <div class="col-md-12 col-sm-12">
                 <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <div class="x_panel">
-                            <div class="x_title">
-                                <h2>Alumnado</h2>
-                                <div class="clearfix"></div>
-                                <p>Seleccione el alumno y realice el registro de pago</p>
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="x_content">
-                                @component('components.datatables.datatable', $dtObjectAlumnos)
-                                @endcomponent
-                            </div>
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>Pagos Registrados</h2>
+                            <div style="float: right;"><a href="/pagos/{{ $id }}/registro" class="btn btn-info" style="color:white;">Registrar Pago</a></div>
+                            <div class="clearfix"></div>
+                            <p>Ingreso de pagos por transferencia o deposito bancario.</p>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+                            @component('components.datatables.datatable', $dtObjectPayments)
+                            @endcomponent
                         </div>
                     </div>
                 </div>

@@ -19,6 +19,7 @@ class CreatePaymentTable extends Migration
             $table->bigInteger('group_id')->unsigned()->nullable();
             $table->integer('number')->unsigned()->nullable();
             $table->enum('type', ['INSCRIPCION', 'MENSUALIDAD', 'EXAMEN EXTRAORDINARIO', 'BLS', 'PHTLS', 'IPR', 'OTROS'])->default('MENSUALIDAD');
+            $table->integer('discounts_id')->default(1);
             $table->double('amount');
             $table->text('notes')->nullable();
             $table->text('bank', 100)->nullable();

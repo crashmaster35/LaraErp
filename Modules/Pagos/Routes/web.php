@@ -13,8 +13,8 @@ use Modules\Pagos\Http\Controllers\PagosController;
 */
 
 Route::prefix('pagos')->group(function() {
-    Route::get('/', [AlumnosController::class, 'index'])->name('studentIndexList');
-    Route::get('/{id}', [PagosController::class, 'index'])->name('paymentStudentList');
+    Route::get('/', [PagosController::class, 'index'])->name('studentIndexList');
+    Route::get('/{id}', [PagosController::class, 'index2'])->name('paymentStudentList');
     Route::get('/{id}/registro', [PagosController::class, 'create'])->name('createPayment');
     Route::put('/{id}/registro', [PagosController::class, 'store']);
 

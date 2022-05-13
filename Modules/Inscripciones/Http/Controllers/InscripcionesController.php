@@ -195,15 +195,15 @@ class InscripcionesController extends Controller
         $inscripcion = $this->inscripcionesService->registerStudent($idstudent, $idgroup, $idcourse);
 
         if ($inscripcion) {
-            $register = $this->inscripcionesService->createInvoices($idstudent, $idgroup);
-            if ($register) {
+            /*$register = $this->inscripcionesService->createInvoices($idstudent, $idgroup);
+            if ($register) {*/
                 $mat = $this->inscripcionesService->addRegisterNumber($idstudent, $regnumber);
 
                 return json_encode(['error' => false, 'msg' => 'El alumno fue inscrito con exito. Su numero de matricula es: '. $mat] );
-            } else {
+/*            } else {
                 return json_encode(['error' => true, 'msg' => 'El alumno ya se encuentra registrado en ese curso.'] );
             }
-
+*/
         } else {
             return json_encode(['error' => true, 'msg' => 'El alumno ya se encuentra registrado en ese grupo.'] );
         }

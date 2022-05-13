@@ -31,6 +31,7 @@
                     </div>
                     <div class="x_content">
                         {!! Form::open() !!}
+                        {!! Form::hidden('student_id', $id) !!}
                         @if ( $pagos )
                             {!! Form::hidden('id', $pagos->id) !!}
                             {!! Form::hidden('_method', 'POST') !!}
@@ -67,7 +68,7 @@
                                     }, 60000);
                                 }
                             </script>
-                        </div>                     
+                        </div>
                         <div class="col-md-4 col-sm-4  form-group has-feedback">
                             <label for="transaction_time">Hora de la Transacción:</label>
                             {!! Form::time('transaction_time', $pagos->transaction_time??'', ['class'=>'form-control has-feedback-left', 'id' => 'transaction_time']) !!}

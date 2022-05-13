@@ -18,11 +18,70 @@ class PagosController extends Controller
         $this->alumnosService = $alumnosService;
     }
 
+    public function index(ComponentService $componentService)
+    {
+        $students = $this->alumnosService->getAllStudents();
+
+        $object = $componentService->dataTableConfigObject([
+            'dtName' => 'register',
+            'dtId' => 'RegistersTable',
+            'dtServerSide' => 'false',
+            'dtData' => $students->toArray(),
+            'dtExport' => 'true',
+            'dtSearchBox' => 'true',
+            'dtCount' => 1,
+            'dtColumns' => [
+                [
+                  'data' => 'id',
+                  'url' => url('/pagos/**field=id**'),
+                ],
+                [
+                  'data' => 'matricula',
+                ],
+                [
+                  'data' => 'nombres',
+                ],
+                [
+                  'title' => 'Apellido Paterno',
+                  'data' => 'ap_paterno',
+                ],
+                [
+                  'title' => 'Apellido Materno',
+                  'data' => 'ap_materno',
+                ],
+                [
+                  'title' => 'Fecha de Nacimiento',
+                  'data' => 'fecha_nac',
+                  'type' => 'date'
+                ],
+                [
+                  'title' => 'Correo Electronico',
+                  'data' => 'email',
+                ],
+                [
+                  'data' => 'celular',
+                ],
+                [
+                  'title' => 'Casa',
+                  'data' => 'tel_casa',
+                ],
+                [
+                  'title' => 'Fecha de Alta',
+                  'data' => 'created_at',
+                  'type' => 'date'
+                ]
+            ]
+        ]);
+
+        return view('pagos::index', ['dtObjectAlumnos' => $object]);
+    }
+
+
     /**
      * Display a listing of the resource.
      * @return Renderable
      */
-    public function index($id, ComponentService $componentService)
+    public function index2($id, ComponentService $componentService)
     {
         $payments = $this->pagosService->getPaymetsByStudentId($id);
         $student = $this->alumnosService->getStudentById($id);
@@ -77,7 +136,7 @@ class PagosController extends Controller
             ]
         ]);
 
-        return view('pagos::index', ['dtObjectPayments' => $object, 'id' => $id, 'student' => $student]);
+        return view('pagos::index2', ['dtObjectPayments' => $object, 'id' => $id, 'student' => $student]);
 
     }
 
@@ -97,11 +156,10 @@ class PagosController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
-        if ($this->coursesService->store($request->all())) {
-            return redirect()->route('showCoursesList')->with('successmsg', 'El Curso ha sido guardado satisfactoriamente');
+        if ($this->pagosService->store($request->all())) {
+            return redirect()->route('paymentStudentList', $request->student_id)->with('successmsg', 'El pago ha sido guardado satisfactoriamente');
         } else {
-            return redirect()->route('showCoursesList')->with('errormsg', 'Hubo un problema al guardar el Curso, por favor intentelo mas tarde o contacte a su departamento de sistemas.');
+            return redirect()->route('paymentStudentList', $request->student_id)->with('errormsg', 'Hubo un problema al guardar el pago, por favor intentelo mas tarde o contacte a su departamento de sistemas.');
         };
     }
 
