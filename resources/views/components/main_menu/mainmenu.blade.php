@@ -48,6 +48,9 @@
                         @if (Module::isEnabled('Inscripciones'))
                             <li><a href="/inscripciones">Inscripciones</a></li>
                         @endif
+                        @if (Module::isEnabled('Bajas'))
+                            <li><a href="/bajas">Bajas</a></li>
+                        @endif
                     </ul>
                 </li>
             @endif

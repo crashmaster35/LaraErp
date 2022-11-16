@@ -38,6 +38,8 @@
       dtVisibility  String      Not Required    'false'         Define if the button columnn visibility will be displayer to accept the user hide or show table columns. If you will
                                                                 activate dtVisibility then you wish want to add 'dtStyle' => 'min-height: 800px', that with to be sure if you hide
                                                                 all the columns then the list of the column visibility stay visible.
+      $dtOrderCol   Number      Not Required    0               Define de number of the column by default to be ordered. If you set this value, the $dtOrderWay is required.
+      $dtOrderWay   String      Not Required    'asc' or 'desc' Define the way the column will be ordered, by default is asc, if you define $dtOrderCol then this parameter is required
       dtExportBtns  Array       Not Required    [print,
                                                 csv,
                                                 excel,
@@ -46,19 +48,41 @@
                                                                     'dtExportBtns' =>   [
                                                                                             [
                                                                                                 'type' => 'print',          // Send directly the table to a printer.
+                                                                                                'btn_title' => Title of the button
                                                                                                 'title' => 'Print List'
-                                                                                            ],[
-                                                                                                'type' => 'printall',            // Export the table on csv format.
-                                                                                                'title' => 'Print All'
+                                                                                                'filename' => This is the filename you want to save
+                                                                                                'orientation' => tipe of orientation landscape or portrait
+                                                                                                'page_size' =>  Size of the page LETTER OR LEGAL
+                                                                                                'message_top' => Text on the top of the file
+                                                                                                'message_bottom' => Text on the bottom of the file
+
                                                                                             ],[
                                                                                                 'type' => 'csv',            // Export the table on csv format.
+                                                                                                'btn_title' => Title of the button
                                                                                                 'title' => 'CSV File'
+                                                                                                'filename' => This is the filename you want to save
+                                                                                                'orientation' => tipe of orientation landscape or portrait
+                                                                                                'page_size' =>  Size of the page LETTER OR LEGAL
+                                                                                                'message_top' => Text on the top of the file
+                                                                                                'message_bottom' => Text on the bottom of the file
                                                                                             ],[
                                                                                                 'type' => 'excel',          // Export the table on excel xls format.
+                                                                                                'btn_title' => Title of the button
                                                                                                 'title' => 'Excel File XLS'
+                                                                                                'filename' => This is the filename you want to save
+                                                                                                'orientation' => tipe of orientation landscape or portrait
+                                                                                                'page_size' =>  Size of the page LETTER OR LEGAL
+                                                                                                'message_top' => Text on the top of the file
+                                                                                                'message_bottom' => Text on the bottom of the file
                                                                                             ],[
                                                                                                 'type' => 'pdf',            // Export the table on adobe pdf format.
+                                                                                                'btn_title' => Title of the button
                                                                                                 'title' => 'Adobe PDF File'
+                                                                                                'filename' => This is the filename you want to save
+                                                                                                'orientation' => tipe of orientation landscape or portrait
+                                                                                                'page_size' =>  Size of the page LETTER OR LEGAL
+                                                                                                'message_top' => Text on the top of the file
+                                                                                                'message_bottom' => Text on the bottom of the file
                                                                                             ]
                                                                                         ],
                                                                 By default if dtExport is set to true, generate all the buttons: print, csv, excel and pdf, you can ommit the
@@ -227,11 +251,13 @@
 
   <script type="text/javascript">
     $(document).ready(function(){
+      $(document.body).css('font-size', '10pt').prepend('<img src="http://datatables.net/media/images/logo-fade.png" style="position:absolute; top:0; left:0;" />');
         var dtTable = $('#{{ $dtId }}').DataTable({
             "responsive": true,
             "processing": {{ $dtServerSide }},
             "serverSide": {{ $dtServerSide }},
-            "order": [[0, 'desc']],
+            "order": [[{{ $dtOrderCol }}, '{{ $dtOrderWay }}']],
+            //"order": [[0, 'asc']],
             "stateSave": {{ $dtStateSave }},
             "colReorder": {{ $dtColReorder }},
             "searching": {{ $dtSearchBox }},
@@ -265,8 +291,13 @@
                             @foreach ($dtExportBtns as $buttons)
                                 {
                                     extend: "{!! $buttons['type'] !!}",
-                                    text: "{!! $buttons['title'] !!}",
-                                    title: "{{ $dtName . date('dmY') }}",
+                                    text: "{!! $buttons['btn_title'] !!}",
+                                    orientation: "{!! $buttons['orientation'] !!}",
+                                    pageSize: "{!! $buttons['page_size'] !!}",
+                                    title: "{!! $buttons['title'] !!}",
+                                    filename: "{!! $buttons['filename'] !!}",
+                                    messageTop: "{!! $buttons['message_top'] !!}",
+                                    messageBottom: "{!! $buttons['message_bottom'] !!}",
                                     className: 'orange'
                                 },
                             @endforeach

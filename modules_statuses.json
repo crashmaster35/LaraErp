@@ -22,5 +22,6 @@
     "HorarioDocentes": false,
     "Personal": false,
     "Examenes": false,
-    "Becas": true
+    "Becas": true,
+    "Bajas": true
 }

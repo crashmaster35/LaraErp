@@ -23,7 +23,9 @@ class AlumnosController extends Controller
     public function index(ComponentService $componentService)
     {
         $students = $this->alumnosService->getAllStudentsNoMat();
-        $studentsM = $this->alumnosService->getAllStudentsWithMat();
+        $studentsM = $this->alumnosService->getAllStudentsWithMat(['registered.group', 'registered.course', 'registered.group.campus']);
+
+        //dd($studentsM);
 
         $object = $componentService->dataTableConfigObject([
             'dtName' => 'alumnos',
@@ -76,11 +78,14 @@ class AlumnosController extends Controller
                 ]
             ]
         ]);
+
+        $studentsM = $this->getStudentsMParameters($studentsM);
+
         $objectM = $componentService->dataTableConfigObject([
             'dtName' => 'alumnosMat',
             'dtId' => 'StudentsMatTable',
             'dtServerSide' => 'false',
-            'dtData' => $studentsM->toArray(),
+            'dtData' => $studentsM,
             'dtExport' => 'true',
             'dtSearchBox' => 'true',
             'dtCount' => 2,
@@ -120,6 +125,15 @@ class AlumnosController extends Controller
                   'data' => 'tel_casa',
                 ],
                 [
+                  'data' => 'plantel',
+                ],
+                [
+                  'data' => 'grupo',
+                ],
+                [
+                  'data' => 'curso',
+                ],
+                [
                   'title' => 'Fecha de Registro',
                   'data' => 'created_at',
                   'type' => 'date'
@@ -129,6 +143,46 @@ class AlumnosController extends Controller
 
         return view('alumnos::index', ['dtObjectAlumnos' => $object, 'dtObjectAlumnosMat' => $objectM]);
     }
+
+    private function getStudentsMParameters($students) 
+    {
+        $st = [];
+        $i = 0;
+        
+        //dd($students);
+
+        foreach ($students as $student) {
+            $st[$i]['id'] = $student->id;
+            $st[$i]['matricula'] = $student->matricula;
+            $st[$i]['nombres'] = $student->nombres;
+            $st[$i]['ap_paterno'] = $student->ap_paterno;
+            $st[$i]['ap_materno'] = $student->ap_materno;
+            $st[$i]['fecha_nac'] = $student->fecha_nac;
+            $st[$i]['email'] = $student->email;
+            $st[$i]['celular'] = $student->celular;
+            $st[$i]['tel_casa'] = $student->tel_casa;
+            $st[$i]['created_at'] = $student->created_at;
+            $st[$i]['grupo'] = '';
+            $st[$i]['plantel'] = '';
+            $st[$i]['curso'] = '';
+
+            foreach ($student->registered as $register) {
+                foreach ($register->group as $group) {
+                    $st[$i]['grupo'] = $group->name??'';
+                    $st[$i]['plantel'] = $group->campus->name??'';
+                }
+
+                foreach ($register->course as $course) {
+                    $st[$i]['curso'] = $course->name??'';
+                }
+            }
+
+            $i++;
+        }
+
+        return $st;
+    }
+
 
     /**
      * Show the form for creating a new resource.

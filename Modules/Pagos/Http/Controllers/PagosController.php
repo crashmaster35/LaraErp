@@ -85,6 +85,7 @@ class PagosController extends Controller
     {
         $payments = $this->pagosService->getPaymetsByStudentId($id);
         $student = $this->alumnosService->getStudentById($id);
+        //dd($student);
 
         $object = $componentService->dataTableConfigObject([
             'dtName' => 'pagos',
@@ -133,7 +134,47 @@ class PagosController extends Controller
                   'data' => 'created_at',
                   'type' => 'date',
                 ]
-            ]
+            ],
+            'dtExportBtns' =>   [
+                [
+                    'type' => 'print',          // Send directly the table to a printer.
+                    'btn_title' => 'Imprimir documento',
+                    'title' => 'CENTRO DE CAPACITACIÓN BRUMER\nESTADO DE CUENTA' . '\n' . $student->matricula . ' - ' . strtoupper($student->nombres) . ' ' . strtoupper($student->ap_paterno) . ' ' . strtoupper($student->ap_materno),
+                    'filename' => 'edocta-'.$student->matricula.'-'.date('dmY'),
+                    'orientation' => 'landscape',
+                    'page_size' =>  'LETTER',
+                    'message_top' => 'Estado de cuenta a la fecha de la impresión.',
+                    'message_bottom' => '\n\rEste documento es unicamente informativo y no tiene validez si no esta firmado y sellado por la autoridad escolar.',
+
+                ],[
+                    'type' => 'csv',            // Export the table on csv format.
+                    'btn_title' => 'Archivo CSV',
+                    'title' => 'CENTRO DE CAPACITACIÓN BRUMER\nESTADO DE CUENTA' . '\n' . $student->matricula . ' - ' . strtoupper($student->nombres) . ' ' . strtoupper($student->ap_paterno) . ' ' . strtoupper($student->ap_materno),
+                    'filename' => 'edocta-'.$student->matricula.'-'.date('dmY'),
+                    'orientation' => 'landscape',
+                    'page_size' =>  'LETTER',
+                    'message_top' => 'Estado de cuenta a la fecha de la impresión.',
+                    'message_bottom' => '\n\rEste documento es unicamente informativo y no tiene validez si no esta firmado y sellado por la autoridad escolar.',
+                ],[
+                    'type' => 'excel',          // Export the table on excel xls format.
+                    'btn_title' => 'Archivo Excel XLS',
+                    'title' => 'CENTRO DE CAPACITACIÓN BRUMER\nESTADO DE CUENTA' . '\n' . $student->matricula . ' - ' . strtoupper($student->nombres) . ' ' . strtoupper($student->ap_paterno) . ' ' . strtoupper($student->ap_materno),
+                    'filename' => 'edocta-'.$student->matricula.'-'.date('dmY'),
+                    'orientation' => 'landscape',
+                    'page_size' =>  'LETTER',
+                    'message_top' => 'Estado de cuenta a la fecha de la impresión.',
+                    'message_bottom' => '\n\rEste documento es unicamente informativo y no tiene validez si no esta firmado y sellado por la autoridad escolar.',
+                ],[
+                    'type' => 'pdf',            // Export the table on adobe pdf format.
+                    'btn_title' => 'Archivo PDF',
+                    'title' => 'CENTRO DE CAPACITACIÓN BRUMER\nESTADO DE CUENTA' . '\n' . $student->matricula . ' - ' . strtoupper($student->nombres) . ' ' . strtoupper($student->ap_paterno) . ' ' . strtoupper($student->ap_materno),
+                    'filename' => 'edocta-'.$student->matricula.'-'.date('dmY'),
+                    'orientation' => 'landscape',
+                    'page_size' =>  'LETTER',
+                    'message_top' => 'Estado de cuenta a la fecha de la impresión.',
+                    'message_bottom' => '\n\rEste documento es unicamente informativo y no tiene validez si no esta firmado y sellado por la autoridad escolar.',
+                ]
+            ],
         ]);
 
         return view('pagos::index2', ['dtObjectPayments' => $object, 'id' => $id, 'student' => $student]);

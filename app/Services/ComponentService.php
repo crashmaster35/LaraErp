@@ -29,6 +29,8 @@ class ComponentService implements ComponentInterface
             'dtExport' =>  (array_key_exists('dtExport', $config)?$config['dtExport']:'false'),
             'dtName' => (array_key_exists('dtName', $config)?$config['dtName']:'export'),                           // Required parameter.
             'dtVisibility' =>  (array_key_exists('dtVisibility', $config)?$config['dtVisibility']:'false'),
+            'dtOrderCol' =>  (array_key_exists('dtOrderCol', $config)?$config['dtOrderCol']:0),
+            'dtOrderWay' =>  (array_key_exists('dtOrderWay', $config)?$config['dtOrderWay']:'asc'),
         ];
 
         // If dtExport is true then dtExportBtns are required if not then is not required
@@ -42,24 +44,40 @@ class ComponentService implements ComponentInterface
                 $expbtns =  [
                     [
                       'type' => 'print',
-                      'title' => 'Print List',
+                      'btn_title' => 'Imprimir documento',
+                      'title' => 'Documento Impreso',
+                      'filename' => $object['dtName'] . date('dmY'),
                       'orientation' => 'landscape',
-                      'pageSize' => 'LETTER',
+                      'page_size' => 'LETTER',
+                      'message_top' => 'Estado de cuenta.',
+                      'message_bottom' => 'Documento meramente informativo.'
                     ],[
                       'type' => 'csv',
-                      'title' => 'CSV File',
+                      'btn_title' => 'Archivo CSV',
+                      'title' => 'Archivo CSV',
+                      'filename' => $object['dtName'] . date('dmY'),
                       'orientation' => 'landscape',
-                      'pageSize' => 'LETTER',
+                      'page_size' => 'LETTER',
+                      'message_top' => 'Estado de cuenta.',
+                      'message_bottom' => 'Documento meramente informativo.'
                     ],[
                       'type' => 'excel',
-                      'title' => 'Excel File XLS',
+                      'btn_title' => 'Archivo Excel XLS',
+                      'title' => 'Archivo Excel XLS',
+                      'filename' => $object['dtName'] . date('dmY'),
                       'orientation' => 'landscape',
-                      'pageSize' => 'LETTER',
+                      'page_size' => 'LETTER',
+                      'message_top' => 'Estado de cuenta.',
+                      'message_bottom' => 'Documento meramente informativo.'
                     ],[
                       'type' => 'pdf',
-                      'title' => 'Adobe PDF File',
+                      'btn_title' => 'Archivo PDF',
+                      'title' => 'Archivo PDF',
+                      'filename' => $object['dtName'] . date('dmY'),
                       'orientation' => 'landscape',
-                      'pageSize' => 'LETTER',
+                      'page_size' => 'LETTER',
+                      'message_top' => 'Estado de cuenta.',
+                      'message_bottom' => 'Documento meramente informativo.'
                     ]
                 ];
             }

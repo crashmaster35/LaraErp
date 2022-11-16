@@ -1,0 +1,13 @@
+{
+    "name": "Bajas",
+    "alias": "bajas",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Bajas\\Providers\\BajasServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

@@ -4,6 +4,7 @@ namespace Modules\Alumnos\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use \Modules\Inscripciones\Entities\Inscripciones;
 
 class alumnos extends Model
 {
@@ -48,5 +49,10 @@ class alumnos extends Model
     protected static function newFactory()
     {
         return \Modules\Alumnos\Database\factories\AlumnosFactory::new();
+    }
+
+    public function registered() 
+    {
+      return $this->hasMany(\Modules\Inscripciones\Entities\Inscripciones::class, 'student_id', 'id');
     }
 }

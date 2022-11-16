@@ -20,4 +20,14 @@ class Inscripciones extends Model
     {
         return \Modules\Inscripciones\Database\factories\InscripcionesFactory::new();
     }
+
+    public function group()
+    {
+        return $this->hasMany(\Modules\Grupos\Entities\Grupos::class, 'id', 'group_id');
+    }
+
+    public function course()
+    {
+        return $this->hasMany(\Modules\Cursos\Entities\Courses::class, 'id', 'course_id');
+    }
 }
