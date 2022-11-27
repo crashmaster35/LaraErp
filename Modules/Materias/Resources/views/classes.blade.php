@@ -18,7 +18,7 @@
     <div class="">
         <div class="page-title">
             <div class="title_left">
-                <h3>Materias por Curso</h3>
+                <h3>Materias</h3>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -27,13 +27,14 @@
                 <div class="tab-content" id="myTabContent">
                     <div class="x_panel">
                         <div class="x_title">
-                            <h2>Cursos</h2>
+                            <h2>Materias</h2>
+                            <div style="float: right;"><a href="/materias/curso/{{$courseId}}/materia/crear" class="btn btn-info" style="color:white;">Registrar Materias</a></div>
                             <div class="clearfix"></div>
-                            <p>Seleccione el curso para ver, editar o borrar sus materias</p>
+                            <p>Seleccione el ID de la materaia para realizar modificaciones</p>
                             <div class="clearfix"></div>
                         </div>
                         <div class="x_content">
-                            @component('components.datatables.datatable', $dtObjectCourses)
+                            @component('components.datatables.datatable', $dtObjectClasses)
                             @endcomponent
                         </div>
                     </div>

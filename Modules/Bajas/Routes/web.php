@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,4 +13,6 @@
 
 Route::prefix('bajas')->group(function() {
     Route::get('/', 'BajasController@index');
+    Route::get('/{id}', 'BajasController@edit');
+    Route::get('/{id}/baja', 'BajasController@destroy');
 });

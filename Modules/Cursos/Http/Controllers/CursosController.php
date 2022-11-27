@@ -41,9 +41,17 @@ class CursosController extends Controller
                   'data' => 'name',
                 ],
                 [
-                  'title' => 'Duración',
+                  'title' => 'Duración en Meses',
                   'data' => 'length',
-                ]
+                ],
+                [
+                  'title' => 'Periodo',
+                  'data' => 'period',
+                ],
+                [
+                  'title' => 'No. de Periodos',
+                  'data' => 'total_period',
+                ],
             ]
         ]);
 
@@ -80,7 +88,7 @@ class CursosController extends Controller
      */
     public function show($id)
     {
-        return view('cursos::show', ['courses' => $this->coursesService->getCourseById($id)]);
+        return view('cursos::show', ['course' => $this->coursesService->getCourseById($id)]);
     }
 
     /**

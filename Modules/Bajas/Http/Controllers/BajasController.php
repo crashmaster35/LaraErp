@@ -16,9 +16,10 @@ use Modules\Inscripciones\Services\InscripcionesService;
 
 class BajasController extends Controller
 {
-    public function __construct(AlumnosService $alumnosService)
+    public function __construct(AlumnosService $alumnosService, InscripcionesService $inscripcionesService)
     {
         $this->alumnosService = $alumnosService;
+        $this->inscripcionesService = $inscripcionesService;
     }
     /**
      * Display a listing of the resource.
@@ -106,7 +107,10 @@ class BajasController extends Controller
      */
     public function edit($id)
     {
-        return view('bajas::edit');
+        $sid = $this->inscripcionesService->getStudentsIdByRegistrationId($id);
+        $student = $this->alumnosService->getStudentWithRegistrationByIds($sid->student_id, $id);
+
+        return view('bajas::edit',['student' => $student]);
     }
 
     /**
@@ -127,6 +131,11 @@ class BajasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if ($this->inscripcionesService->destroy($id)) {
+            return redirect('/bajas')->withSuccess('El usuario ha sido dado de baja exitosamente del grupo.');
+        } else {
+            return redirect('/bajas')->withError('Hubo un problema al dar de baja al alumno, intentelo mas tarde.');
+        }
+        dd($id);
     }
 }

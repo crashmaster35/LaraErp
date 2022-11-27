@@ -1,25 +1,24 @@
 <?php
 
-namespace Modules\Cursos\Entities;
+namespace Modules\Materias\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class courses extends Model
+class Classes extends Model
 {
-    protected $table = 'courses';
-
     use HasFactory;
 
     protected $fillable = [
         'name',
-        'lenght',
+        'course_id',
+        'hours',
         'period',
-        'total_period'
+        'what_period'
     ];
 
     protected static function newFactory()
     {
-        return \Modules\Cursos\Database\factories\CoursesFactory::new();
+        return \Modules\Materias\Database\factories\ClassesFactory::new();
     }
 }

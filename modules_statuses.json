@@ -11,8 +11,8 @@
     "Calificaciones": false,
     "Asistencias": false,
     "Inscripciones": true,
-    "Pagos": true,
-    "Materias": false,
+    "Pagos": false,
+    "Materias": true,
     "Cursos": true,
     "PagoDocentes": false,
     "AsistenciaDocentes": true,
@@ -22,6 +22,6 @@
     "HorarioDocentes": false,
     "Personal": false,
     "Examenes": false,
-    "Becas": true,
+    "Becas": false,
     "Bajas": true
 }

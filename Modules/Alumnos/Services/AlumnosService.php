@@ -27,14 +27,12 @@ class AlumnosService
 
   public function getStudentsInGroups()
   {
-    //return Alumnos::where('matricula', '=', null)->get();
     return Alumnos::select('registration.id as id', 'students.id as student_id', 'matricula', 'nombres', 'ap_paterno', 'ap_materno','groups.name as grupo', 'courses.name as carrera')
                         ->join('registration', 'students.id', '=', 'registration.student_id')
                         ->join('groups', 'registration.group_id', '=', 'groups.id')
                         ->join('courses', 'groups.courses_id', '=', 'courses.id')
                         ->orderBy('students.matricula')
                         ->get();
-    dd($alumnos);
   }
 
 
@@ -45,6 +43,16 @@ class AlumnosService
     } else {
       return Alumnos::where('matricula', '<>', null)->get();
     }
+  }
+
+  public function getStudentWithRegistrationByIds($sid, $id)
+  {
+    return Alumnos::select('students.*','registration.id as rid', 'registration.group_id as gid', 'students.id as student_id', 'matricula', 'nombres', 'ap_paterno', 'ap_materno','groups.name as grupo', 'courses.name as carrera')
+    ->join('registration', 'students.id', '=', 'registration.student_id')
+    ->join('groups', 'registration.group_id', '=', 'groups.id')
+    ->join('courses', 'groups.courses_id', '=', 'courses.id')
+    ->where('students.id', $sid)
+    ->where('registration.id', $id)->first();
   }
 
   public function getStudentById($id)
