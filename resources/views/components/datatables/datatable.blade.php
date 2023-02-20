@@ -257,7 +257,6 @@
             "processing": {{ $dtServerSide }},
             "serverSide": {{ $dtServerSide }},
             "order": [[{{ $dtOrderCol }}, '{{ $dtOrderWay }}']],
-            //"order": [[0, 'asc']],
             "stateSave": {{ $dtStateSave }},
             "colReorder": {{ $dtColReorder }},
             "searching": {{ $dtSearchBox }},
