@@ -1,64 +1,71 @@
-## Acerca de LaraErp
+## About LaraErp
 
-LaraErp es un ERP empresarial de codigo abierto, totalmente modular. Para los desarrolladores se encuentra creado en Laravel 8, permite la creación de modulos interconectados que al instalarlos pueden agregar opciones y funcionalidades a los diversos modulos ya incuidos en el sistema. 
+LaraErp is an open source, fully modular business ERP. For developers, it is created in Laravel 8, it allows the creation of interconnected modules that, when installed, can add options and functionalities to the various modules already included in the system.
 
-Actualmente los modulos estan enfocados al control escolar.
+Currently the modules are focused on school control.
 
-## Desarrolladores
+## Developers
 
-Se les invita a participar en el desarrollo de LaraErp bajo las siguientes condiciones:
+You are invited to participate in the development of LaraErp under the following conditions:
 
-- El codigo debe estar totalmente documentado.
-- Todo debe desarrollarse como modulos independientes.
-- Lean los archivos de configuración que les permite desarrollar sus propios modulos.
-- Deberán trabajar en ramas (branch) de git y posteriormente informarme que crearon una modificación para yo realizar la union y prueba (merge).
+- The code must be fully documented.
+- Everything must be developed as independent modules.
+- Read the configuration files that allow you to develop your own modules.
+- You will need to work on git branches and then tell me to merge on master. Also create a issue for you tasks and push then with the respective comments (Fix #, etc.) to have a track of everything.
 
-## Modulos en desarrollo 
+## Modules under development
 
-Debido a que el sistema es modular, se pueden desarrollar modulos casi para cualquier cosa. Se encuentran publicados los modulos de:
+Because the system is modular, you can build modules for almost anything. The modules of:
 
-- [ ] Modulos = Módulo base de configuración para activar y desactivar modulos.
-- [ ] Alumnos = Sistema de registro de alumnos para escuelas.
-- [ ] Grupos = Modulo que permite la alta de grupos. Requiere los modulos de Planteles y Cursos
-- [ ] Planteles = Sistema de registro de los planteles escolares de la institucion.
+- [ ] Modulos = Configuration base module to activate and deactivate modules.
+- [ ] Alumnos = Student registration system for schools.
+- [ ] Grupos = Module that allows the registration of groups. Requires the Campus and Courses modules
+- [ ] Planteles = Registration system of the institution's schools.
 
-Se esta trabajando en modulos de un sistema de control escolar
+Work is being done on modules of a school control system
 
-## Seguridad y vulnerabilidades
+## Security and vulnerabilities
 
-Si encuentran alguna vulnerabilidad por favor reportenlo directamente en nuestro github: (https://github.com/crashmaster35/LaraErp)
+If you find any vulnerability please report it directly on our github: (https://github.com/crashmaster35/LaraErp)
 
-## Licencia
+## License
 
-LaraERP es un sistema de codigo abierto basado en la licencia [MIT license](https://opensource.org/licenses/MIT).
+LaraERP is an open source system based on the license [MIT license](https://opensource.org/licenses/MIT).
 
-Queda estrictamente prohibida su venta.
+Its sale in whole or in parts is strictly prohibited.
 
-## Lista por hacer
+## To do list
 
-Modulos:
-  - Usuarios
-  - Roles
+Translate all the code to ENGLISH. counting variables and so on.
 
-Dentro del core del sistema falta: 
+Create the translation system for different languages.
 
-  - Menus 
-  - Pantallas ingreso
-  - Pantallas especiales (500, 401, etc)
+Modules:
+   - Users
+   - Roles
 
-## Se busca
+Within the core of the system is missing:
 
--- Desarrolladores para:
+   - Menus
+   - Entry screens
+   - Special screens (500, 401, etc)
 
-- Multidiomas
-- Desarrollo general
+## Wanted
 
-## Diseño
+-- Developers for:
 
-El diseño se encuentra crado por Gentella - Bootstrap Admin Template by ColorLib
+- Multilanguages
+- General development
 
-Se encuentra ubicado en la carpeta public/template. De ahi se pueden ir agregando los componentes.
+## Design
 
-## Colaboradores
+Design is closed by Gentelella - Bootstrap Admin Template by ColorLib
+It is located in the public/template folder. From there you can add the components.
 
-Bruno Chavez (crash.master35@gmail.com)
+## Collaborators
+
+If you want to support the development, send an email to Bruno Chavez (crash.master35@gmail.com) to give you access and together we can make LaraErp a powerful and stable ERP system.
+
+## Actually used by
+
+Centro de Capacitación BRUMER http://facebook.com/ccbrumer http://ccbrumer.com
