@@ -11,6 +11,8 @@
 |
 */
 
-Route::prefix('institucion')->group(function() {
-    Route::get('/', 'InstitucionController@index');
+Route::middleware(['auth'])->group(function() {
+    Route::prefix('institucion')->group(function() {
+        Route::get('/', 'InstitucionController@index');
+    });
 });

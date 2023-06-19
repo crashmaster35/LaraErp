@@ -11,14 +11,14 @@
 |
 */
 
-/* this is the route for the main pages of the module */
-Route::prefix('user')->group(function() {
-    Route::get('/', 'UserController@index');
+Route::middleware(['auth'])->group(function() {
+    /* this is the route for the main pages of the module */
+    Route::prefix('user')->group(function() {
+        Route::get('/', 'UserController@index');
 
-    /* This is the config page for the module */
-    Route::prefix('settings')->group(function() {
-      Route::get('/', 'UserController@settings');
+        /* This is the config page for the module */
+        Route::prefix('settings')->group(function() {
+            Route::get('/', 'UserController@settings');
+        });
     });
-
 });
-

@@ -11,10 +11,12 @@ use Modules\Becas\Http\Controllers\BecasController;
 |
 */
 
-Route::prefix('becas')->group(function() {
-    Route::get('/', [BecasController::class, 'index'])->name('showDiscountList');
-    Route::get('/registro', [BecasController::class, 'create'])->name('createDiscount');
-    Route::put('/registro', [BecasController::class, 'store']);
-    Route::get('/{id}', [BecasController::class, 'show'])->name('showDiscount');
-    Route::post('/{id}', [BecasController::class, 'update']);
+Route::middleware(['auth'])->group(function() {
+    Route::prefix('becas')->group(function() {
+        Route::get('/', [BecasController::class, 'index'])->name('showDiscountList');
+        Route::get('/registro', [BecasController::class, 'create'])->name('createDiscount');
+        Route::put('/registro', [BecasController::class, 'store']);
+        Route::get('/{id}', [BecasController::class, 'show'])->name('showDiscount');
+        Route::post('/{id}', [BecasController::class, 'update']);
+    });
 });

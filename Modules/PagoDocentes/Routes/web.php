@@ -11,6 +11,8 @@
 |
 */
 
-Route::prefix('pagodocentes')->group(function() {
-    Route::get('/', 'PagoDocentesController@index');
+Route::middleware(['auth'])->group(function() {
+    Route::prefix('pagodocentes')->group(function() {
+        Route::get('/', 'PagoDocentesController@index');
+    });
 });

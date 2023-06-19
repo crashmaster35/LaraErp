@@ -11,12 +11,12 @@
 |
 */
 
-Route::prefix('roles')->group(function() {
-    Route::get('/', 'RolesController@index');
-
-    /* This is the config page for the module */
-    Route::prefix('settings')->group(function() {
-      Route::get('/', 'RolesController@settings');
+Route::middleware(['auth'])->group(function() {
+    Route::prefix('roles')->group(function() {
+        Route::get('/', 'RolesController@index');
+        /* This is the config page for the module */
+        Route::prefix('settings')->group(function() {
+            Route::get('/', 'RolesController@settings');
+        });
     });
-
 });

@@ -12,11 +12,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::prefix('materias')->group(function() {
-    Route::get('/', [MateriasController::class, 'index']);
-    Route::get('/curso/{cid}', [MateriasController::class, 'getClasses'])->name('showClassesList');
-    Route::get('/curso/{cid}/materia/crear', [MateriasController::class, 'create']);
-    Route::put('/curso/{cid}/materia/crear', [MateriasController::class, 'store']);
-    Route::get('/curso/{cid}/materia/{mid}', [MateriasController::class, 'show']);
-    Route::post('/curso/{cid}/materia/{mid}', [MateriasController::class, 'update']);
+Route::middleware(['auth'])->group(function() {
+    Route::prefix('materias')->group(function() {
+        Route::get('/', [MateriasController::class, 'index']);
+        Route::get('/curso/{cid}', [MateriasController::class, 'getClasses'])->name('showClassesList');
+        Route::get('/curso/{cid}/materia/crear', [MateriasController::class, 'create']);
+        Route::put('/curso/{cid}/materia/crear', [MateriasController::class, 'store']);
+        Route::get('/curso/{cid}/materia/{mid}', [MateriasController::class, 'show']);
+        Route::post('/curso/{cid}/materia/{mid}', [MateriasController::class, 'update']);
+    });
 });
