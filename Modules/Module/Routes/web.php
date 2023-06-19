@@ -11,8 +11,9 @@
 |
 */
 
-Route::prefix('modules')->group(function() {
-    Route::get('/', 'ModuleController@index');
-
-    Route::get('toggleModule', 'ModuleController@toggleModule');
+Route::middleware(['auth'])->group(function() {
+    Route::prefix('modules')->group(function() {
+        Route::get('/', 'ModuleController@index');
+        Route::get('toggleModule', 'ModuleController@toggleModule');
+    });
 });

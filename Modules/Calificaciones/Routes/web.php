@@ -10,7 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::prefix('calificaciones')->group(function() {
-    Route::get('/', 'CalificacionesController@index');
+Route::middleware(['auth'])->group(function() {
+    Route::prefix('calificaciones')->group(function() {
+        Route::get('/', 'CalificacionesController@index');
+    });
 });

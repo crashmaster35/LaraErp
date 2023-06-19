@@ -12,10 +12,12 @@ use Modules\Planteles\Http\Controllers\CampusesController;
 |
 */
 
-Route::prefix('planteles')->group(function() {
-    Route::get('/', [CampusesController::class, 'index'])->name('showCampusList');
-    Route::get('/registro', [CampusesController::class, 'create'])->name('createCampus');
-    Route::put('/registro', [CampusesController::class, 'store']);
-    Route::get('/{id}', [CampusesController::class, 'show'])->name('showCampus');
-    Route::post('/{id}', [CampusesController::class, 'update']);
+Route::middleware(['auth'])->group(function() {
+    Route::prefix('planteles')->group(function() {
+        Route::get('/', [CampusesController::class, 'index'])->name('showCampusList');
+        Route::get('/registro', [CampusesController::class, 'create'])->name('createCampus');
+        Route::put('/registro', [CampusesController::class, 'store']);
+        Route::get('/{id}', [CampusesController::class, 'show'])->name('showCampus');
+        Route::post('/{id}', [CampusesController::class, 'update']);
+    });
 });

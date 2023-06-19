@@ -10,11 +10,13 @@ use Modules\Inscripciones\Http\Controllers\InscripcionesController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::prefix('inscripciones')->group(function() {
-    Route::get('/', [InscripcionesController::class, 'index']);
-    Route::post('/getGroup', [InscripcionesController::class, 'getGroup']);
-    Route::get('/{id}', [InscripcionesController::class, 'show'])->name('registerWizard');
-    Route::post('/{id}', [InscripcionesController::class, 'update']);
-    Route::post('/{id}/inscribir', [InscripcionesController::class, 'postRegister']);
+Route::middleware(['auth'])->group(function() {
+    Route::prefix('inscripciones')->group(function() {
+        Route::get('/', [InscripcionesController::class, 'index']);
+        Route::post('/getGroup', [InscripcionesController::class, 'getGroup']);
+        Route::get('/{id}', [InscripcionesController::class, 'show'])->name('registerWizard');
+        Route::post('/{id}', [InscripcionesController::class, 'update']);
+        Route::post('/{id}/inscribir', [InscripcionesController::class, 'postRegister']);
+    });
 });
 

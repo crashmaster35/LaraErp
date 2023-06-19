@@ -11,6 +11,8 @@
 |
 */
 
-Route::prefix('personal')->group(function() {
-    Route::get('/', 'PersonalController@index');
+Route::middleware(['auth'])->group(function() {
+    Route::prefix('personal')->group(function() {
+        Route::get('/', 'PersonalController@index');
+    });
 });

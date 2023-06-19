@@ -10,7 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::prefix('horarios')->group(function() {
-    Route::get('/', 'HorariosController@index');
+Route::middleware(['auth'])->group(function() {
+    Route::prefix('horarios')->group(function() {
+        Route::get('/', 'HorariosController@index');
+    });
 });

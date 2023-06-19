@@ -11,6 +11,8 @@
 |
 */
 
-Route::prefix('horariodocentes')->group(function() {
-    Route::get('/', 'HorarioDocentesController@index');
+Route::middleware(['auth'])->group(function() {
+    Route::prefix('horariodocentes')->group(function() {
+        Route::get('/', 'HorarioDocentesController@index');
+    });
 });

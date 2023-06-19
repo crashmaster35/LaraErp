@@ -10,9 +10,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::prefix('bajas')->group(function() {
-    Route::get('/', 'BajasController@index');
-    Route::get('/{id}', 'BajasController@edit');
-    Route::get('/{id}/baja', 'BajasController@destroy');
+Route::middleware(['auth'])->group(function() {
+    Route::prefix('bajas')->group(function() {
+        Route::get('/', 'BajasController@index');
+        Route::get('/{id}', 'BajasController@edit');
+        Route::get('/{id}/baja', 'BajasController@destroy');
+    });
 });
